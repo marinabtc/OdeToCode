@@ -18,16 +18,23 @@ function getPoem() {
   // Grabs the value of the search by option
   var selected = $(".form-select").val();
 
-  // Grabs the value of the user input
-  var input = $("#main-input").val().trim();
+  // Grabs the value of the main user input
+  var mainInput = $("#main-input").val().trim();
 
-  console.log("INPUT is: " + input);
+  // Grabs the values of the advance search
+  var advAuthor = $("#adv-author").val().trim();
+  var advTitle = $("#adv-title").val().trim();
+  var advLines = $("#adv-lines").val().trim();
+
+  console.log("INPUT is: " + mainInput);
+  console.log("Advance search is: " + advAuthor, advTitle, advLines);
+
 
   // Only executes if the input is not empty
-  if (input !== "") {
+  if (mainInput !== "") {
     // If search by "author" is selected
     if (selected == 1) {
-      author = input;
+      author = mainInput;
 
       //replaces spaces by % to be supported in the URL
       author.replace(" ", "%");
@@ -37,7 +44,7 @@ function getPoem() {
 
     // If search by "title" is selected
     else if (selected == 2) {
-      title = input;
+      title = mainInput;
       title.replace(" ", "%");
       console.log(title);
 
@@ -46,7 +53,7 @@ function getPoem() {
 
     // If search by "lines" is selected
     else if (selected == 3) {
-      lines = input;
+      lines = mainInput;
       lines.replace(" ", "%");
       console.log(lines);
 
@@ -57,6 +64,65 @@ function getPoem() {
     else {
       alert("Please select a search parameter.");
     }
+
+    // Call to the API using one of the queryURL value above
+    $.ajax({
+      url: queryURL,
+      method: "GET",
+    }).then(function (response) {
+      if (response !== null) {
+        console.log(response);
+
+        // gets the poem's title
+        var poemTitle = response[0].title;
+        console.log("Title: " + poemTitle);
+
+        // gets the poem's author
+        var poemAuthor = response[0].author;
+        console.log("Author: " + poemAuthor);
+
+        // gets the poem's lines
+        var poemLines = response[0].lines;
+
+        console.log("Lines: ");
+
+        // loops through the lines array
+        for (var i = 0; i < poemLines.length; i++) {
+          console.log(poemLines[i]);
+        }
+      }
+    });
+  }
+  // Advance search
+  else {
+
+    // search by author + title
+    if (advAuthor !== "" && advTitle !== "" && advLines === "") {
+
+      advAuthor.replace(" ", "%");
+      advTitle.replace(" ", "%");
+      queryURL = `https://poetrydb.org/author,title,poemcount/${advAuthor};${advTitle};1`;
+    
+    }
+
+    // search by author + lines
+    else if (advAuthor !== "" && advTitle === "" && advLines !== "") {
+
+      advAuthor.replace(" ", "%");
+      advLines.replace(" ", "%");
+      queryURL = `https://poetrydb.org/author,lines,poemcount/${advAuthor};${advLines};1`;
+
+    }
+
+    // search by title + lines
+    else if (advAuthor === "" && advTitle !== "" && advLines !== "") {
+
+      advTitle.replace(" ", "%");
+      advLines.replace(" ", "%");
+      queryURL = `https://poetrydb.org/title,lines,poemcount/${advTitle};${advLines};1`;
+    
+    }
+  
 
     // Call to the API using one of the queryURL value above
     $.ajax({
