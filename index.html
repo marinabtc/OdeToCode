@@ -3,21 +3,25 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>OdeToCode</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>OdeToCode</title>
 
-    <!--Bootstrap core CSS-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Satisfy&display=swap" rel="stylesheet">
+  <!--Bootstrap core CSS-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Satisfy&display=swap" rel="stylesheet">
+  <!--Modal script-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
 
 </head>
 
@@ -72,7 +76,8 @@
           </div>
 
           <div class="col-md-6">
-            <input type="text" class="form-control rounded-pill" id="main-input" placeholder="Enter author, title or lines">
+            <input type="text" class="form-control rounded-pill" id="main-input"
+              placeholder="Enter author, title or lines">
             <!-- Added id to be able to target this specific input -->
           </div>
 
@@ -114,67 +119,138 @@
 
 
 
-<!-- Shahid Adding bootstrap -->
-<!-- Poem of the day container -->
-<section class="container">
-  <h5 class="POTD POTD-Intro  justify-content-center">Random Poem of the Day</h5>
-  <div class="row d-flex">
-<div class="card">
-  <img class="card-img" src="./assets/Images/placeholder.png" alt="Card image">
-  <div class="card-img-overlay">
-    <h5 class="POTD POTD-Title  justify-content-center">Poem Title</h5>
-    <h5 class="POTD POTD-Author  justify-content-center">Poem Author</h5>
-    <p class="Poem Poem-Text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
+  <!-- Shahid Adding bootstrap -->
+  <!-- Poem of the day container -->
+  <section class="container">
+    <h5 class="POTD POTD-Intro  justify-content-center">Random Poem of the Day</h5>
+    <div class="row d-flex">
+      <div class="card">
+        <img class="card-img" src="./assets/Images/placeholder.png" alt="Card image">
+        <div class="card-img-overlay">
+          <h5 class="POTD POTD-Title  justify-content-center">Poem Title</h5>
+          <h5 class="POTD POTD-Author  justify-content-center">Poem Author</h5>
+          <p class="Poem Poem-Text">This is a wider card with supporting text below as a natural lead-in to additional
+            content. This content is a little bit longer.</p>
         </div>
       </div>
-<!-- User reflections button to open modal that will contain form for them to enter reflections -->
+    </div>
+    <!-- User reflections button to open modal that will contain form for them to enter reflections -->
 
     <div class="row justify-content-center my-4">
-      <button type="button" class="align-self-end btn btn-lg btn-primary rounded-pill" href="#">Your Reflections</button>
+      <button type="button" class="align-self-end btn btn-lg btn-primary rounded-pill" href="#">Your
+        Reflections</button>
     </div>
     <div class="row justify-content-center my-4">
 
-      
-<!-- 3 cards for the wireframe topics inc poet suggestions etc. -->
-          <div class="col-lg-4 col-md-6 p-4 text-center">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta est cumque fugiat, fugit velit ducimus harum ad quas maxime odio tempora, dolores quaerat pariatur delectus sed, facere vitae suscipit hic.</p>
-            <div class="card-footer">
-            <a href="#" class="align-self-end btn btn-lg  rounded-pill card-button">Reflections</a>
-          </div>
-          </div>    
 
-          <div class="col-lg-4 col-md-12 p-4 text-center">
-            <h5 class="card-title Poet-Sug-Title">Need Some Poet Suggestions?</h5>
-            <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique est voluptas veritatis alias recusandae atque consectetur quis? Aliquid ducimus non reiciendis excepturi? Rem mollitia voluptatibus adipisci eius. Natus, exercitationem magnam.</p>
-            <div class="card-footer">
-            <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-1 card-button my-1 rounded-pill">William Blake</a>
-            <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-2 card-button my-1 rounded-pill">Fatimah Asghar</a>
-            <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-3 card-button my-1 rounded-pill">James Baldwin</a>
-          </div>
-          </div>
-      
-
-      
-          <div class="col-lg-4 col-md-6 p-4 text-center">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni voluptatem quaerat doloremque, reiciendis cupiditate non beatae, ut quidem facere nemo assumenda temporibus pariatur officia amet vel voluptates at cumque quos.</p>
-            <div class="card-footer">
-            <a href="#" class="btn btn-lg rounded-pill card-button">Reflections</a>
-          </div>
+      <!-- 3 cards for the wireframe topics inc poet suggestions etc. -->
+      <div class="col-lg-4 col-md-6 p-4 text-center">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta est cumque fugiat, fugit
+          velit ducimus harum ad quas maxime odio tempora, dolores quaerat pariatur delectus sed, facere vitae suscipit
+          hic.</p>
+        <div class="card-footer">
+          <a href="#" class="align-self-end btn btn-lg  rounded-pill card-button">Reflections</a>
         </div>
       </div>
 
+      <div class="col-lg-4 col-md-12 p-4 text-center">
+        <h5 class="card-title Poet-Sug-Title">Need Some Poet Suggestions?</h5>
+        <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique est voluptas veritatis
+          alias recusandae atque consectetur quis? Aliquid ducimus non reiciendis excepturi? Rem mollitia voluptatibus
+          adipisci eius. Natus, exercitationem magnam.</p>
+        <div class="card-footer">
+          <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-1 card-button my-1 rounded-pill">William Blake</a>
+          <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-2 card-button my-1 rounded-pill">Fatimah Asghar</a>
+          <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-3 card-button my-1 rounded-pill">James Baldwin</a>
+        </div>
+      </div>
+
+
+
+      <div class="col-lg-4 col-md-6 p-4 text-center">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni voluptatem quaerat
+          doloremque, reiciendis cupiditate non beatae, ut quidem facere nemo assumenda temporibus pariatur officia amet
+          vel voluptates at cumque quos.</p>
+        <div class="card-footer">
+          <a href="#" class="btn btn-lg rounded-pill card-button">Reflections</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!--Modal Trigger Button-->
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Click here for Thoughts
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Thoughts!</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="updateeventsform2" class="form-horizontal"></form>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="inputNotes">Notes</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="newnote" name="newnote" placeholder="Put here your thought" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Find Us-->
+
+    <section>
+
+      <footer class="footer bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 h-100 text-center mx-auto">
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item mr-3">
+                  <a href="#">
+                    <i class="fab fa-linkedin fa-3x fa-fw"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item mr-3">
+                  <a href="#">
+                    <i class="fab fa-twitter-square fa-3x fa-fw"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item mr-3">
+                  <a href="#">
+                    <i class="fab fa-github fa-3x fa-fw"></i>
+                  </a>
+                </li>
+              </ul>
+              <p class="text-muted small mb-4 mb-lg-0">&copy; Your website 2022. Coded by yours truly-</p>
+            </div>
+
+
+          </div>
+        </div>
+      </footer>
     </section>
 
 
 
-  <!-- jQuery JS -->
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-  <!-- Code to the JavaScript File -->
-  <script src="assets/js/script.js"></script>
+    <!-- jQuery JS -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Code to the JavaScript File -->
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
