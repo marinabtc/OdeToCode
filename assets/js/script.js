@@ -70,7 +70,8 @@ function getPoem() {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      if (response !== null) {
+      
+      if (typeof response === Array) {
         console.log(response);
 
         // gets the poem's title
@@ -91,6 +92,11 @@ function getPoem() {
           console.log(poemLines[i]);
         }
       }
+
+      else {
+        console.log("No poem found corresponding to your search term(s)")      
+      }
+
     });
   }
   // Advance search
@@ -129,7 +135,7 @@ function getPoem() {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      if (response !== null) {
+      if (typeof response === Array) {
         console.log(response);
 
         // gets the poem's title
@@ -149,6 +155,10 @@ function getPoem() {
         for (var i = 0; i < poemLines.length; i++) {
           console.log(poemLines[i]);
         }
+      }
+
+      else {
+        console.log("No poem found corresponding to your search term(s)")      
       }
     });
   }
