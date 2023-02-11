@@ -60,7 +60,8 @@ function getPoem () {
 
         // If nothing is selected
         else {
-            alert("Please select a search parameter.")
+            // alert("Please select a search parameter.")
+            $("#no-search-by").modal("show");
         }
 
         // Call to the API using one of the queryURL value above   
