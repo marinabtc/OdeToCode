@@ -1,0 +1,92 @@
+
+:root{
+    --ochre: rgb(224, 195, 31);
+    --white: rgb(249, 249, 249);
+    --teal: rgba(0, 99, 99, 1);
+    /* --teal: rgba(99, 68, 0, 1); */
+    --forest-green: rgb(4, 92, 55);
+    --forest-green: rgb(95, 74, 29);
+    --forest-green-light: rgb(161, 134, 44);
+    --lime: rgb(164, 202, 113);
+    --ink-pen: rgb(10, 9, 10);
+    --ink-white: rgb(175, 174, 174);
+}
+
+
+/* make navbar background ochre  */
+.navbar {
+    background-color: var(--ochre) !important;
+    border-radius: 0px !important;
+    border: 0px !important;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.486) !important;
+    transition: 0.5s !important;
+}
+
+/* Make .Logo dropshadow forest green and glow on hover */
+.Logo {
+    color: var(--ink-pen) !important;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.486) !important;
+    font-size: 2em !important;
+    font-family: 'Satisfy', cursive !important;
+    text-decoration: none !important;
+    transition: 0.5s !important;
+}
+
+.customNav {
+    border-radius: 4px !important;
+}
+
+.customNav a:hover {
+    color: white;
+    transition: all 0.5s ease-in-out !important;
+    text-shadow: 0px 0px 8px var(--white), 0 0 15px var(--white);
+}
+
+/* align the POTD-Intro to centre and give the text a shadow */
+.POTD-Intro, .POTD-Title, .POTD-Author {
+    text-align: center;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.486);
+    font-family: 'Satisfy', cursive;
+}
+
+.POTD-Intro {
+    color: var(--ochre);
+    font-size: 2.5em;
+    text-decoration-line: underline;
+}
+.POTD-Title, .POTD-Author {
+    color: var(--teal);
+    font-size: 1.5em;
+}
+
+/* style .Poem-Text so it is dark grey and script  */
+.Poem-Text {
+    /* color: var(--ink-pen); */
+    color: var(--ink-white);
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.486);
+    font-size: 1.5em;
+    text-align: left;
+    font-family: 'Dancing Script', cursive;
+}
+/* make text shadow a drop shadow */
+
+.adv-search{
+    /* making text decoration nothing */
+    text-decoration: none !important;
+}
+
+.adv-search a:hover {
+    color: white;
+    transition: all 0.5s ease-in-out !important;
+    text-shadow: 0px 0px 8px var(--white), 0 0 15px var(--white) !important;
+}
+
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
