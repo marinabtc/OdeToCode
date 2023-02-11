@@ -11,10 +11,11 @@ $("#search-button").on("click", getPoem);
 $("#main-input").on("keyup", function (event) {
   if (event.key === "Enter" || event.keyCode === 13) {
     getPoem();
+
   }
 });
 
-// When "Advanced search" is clicked remove anything in the main input box
+// When "Advanced search" is clicked remove anything in the main search box
 $(".adv-search").on("click", function () {
 
   $("#main-input").val("");
@@ -164,10 +165,17 @@ function getPoem() {
       }
 
       else {
-        console.log("No poem found corresponding to your search term(s)")      
+        console.log("No poem found corresponding to your search term(s)");
       }
     });
   }
+
+  // resets the search boxes
+  $("#main-input").val("");
+  $("#adv-author").val("");
+  $("#adv-title").val("");
+  $("#adv-lines").val("");
+
 }
 
 // PoetryDB API path to get random poem: https://poetrydb.org/random
