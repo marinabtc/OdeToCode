@@ -8,7 +8,7 @@ var linecount;
 $("#search-button").on("click", getPoem);
 
 // When the enter key is pressed is clicked gets the poem corresponding to the input search
-$("#main-input").on("keyup", function (event) {
+$(".searchbar-whole").on("keyup", function (event) {
   if (event.key === "Enter" || event.keyCode === 13) {
     getPoem();
 
