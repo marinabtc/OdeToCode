@@ -43,11 +43,11 @@
   <!-- INPUT SEARCH SECTION -->
   <section>
     <div class="jumbotron d-flex justify-content-center"> <!-- Added d-flex and justify-content-center -->
-      <div class="col-md-10">
+      <div class="col-md-10 searchbar-whole">
 
         <div class="row g-3 mt-2">
 
-          <div class="col-md-3">
+          <div class="col-md-3 dropdown-search">
             <div class="dropdown">
               <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
                 Search by
@@ -61,7 +61,7 @@
               </ul> -->
 
               <!-- Added id to be able to target the specific drop down item -->
-              <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+              <select class="form-select form-select-lg mb-3 rounded-pill" aria-label=".form-select-lg example">
                 <option selected>Search by</option>
                 <option value="1" id="author">Author</option>
                 <option value="2" id="title">Title</option>
@@ -72,12 +72,12 @@
           </div>
 
           <div class="col-md-6">
-            <input type="text" class="form-control" id="main-input" placeholder="Enter author, title or lines">
+            <input type="text" class="form-control rounded-pill" id="main-input" placeholder="Enter author, title or lines">
             <!-- Added id to be able to target this specific input -->
           </div>
 
-          <div class="col-md-3">
-            <button class="btn btn-secondary btn-block" id="search-button">Search Poem</button>
+          <div class="col-md-3 poem-search-button">
+            <button class="btn btn-secondary rounded-pill" id="search-button">Search Poem</button>
             <!-- Added id to target the search button -->
           </div>
 
@@ -141,7 +141,7 @@
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta est cumque fugiat, fugit velit ducimus harum ad quas maxime odio tempora, dolores quaerat pariatur delectus sed, facere vitae suscipit hic.</p>
             <div class="card-footer">
-            <a href="#" class="align-self-end btn btn-lg btn-outline-primary rounded-pill">Reflections</a>
+            <a href="#" class="align-self-end btn btn-lg  rounded-pill card-button">Reflections</a>
           </div>
           </div>    
 
@@ -149,9 +149,9 @@
             <h5 class="card-title Poet-Sug-Title">Need Some Poet Suggestions?</h5>
             <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique est voluptas veritatis alias recusandae atque consectetur quis? Aliquid ducimus non reiciendis excepturi? Rem mollitia voluptatibus adipisci eius. Natus, exercitationem magnam.</p>
             <div class="card-footer">
-            <a href="#" class="align-self-end btn btn-lg btn-outline-primary Poet-Sug-Btn-1 my-1 rounded-pill">William Blake</a>
-            <a href="#" class="align-self-end btn btn-lg btn-outline-primary Poet-Sug-Btn-2 my-1 rounded-pill">Fatimah Asghar</a>
-            <a href="#" class="align-self-end btn btn-lg btn-outline-primary Poet-Sug-Btn-3 my-1 rounded-pill">James Baldwin</a>
+            <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-1 card-button my-1 rounded-pill">William Blake</a>
+            <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-2 card-button my-1 rounded-pill">Fatimah Asghar</a>
+            <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-3 card-button my-1 rounded-pill">James Baldwin</a>
           </div>
           </div>
       
@@ -161,7 +161,7 @@
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni voluptatem quaerat doloremque, reiciendis cupiditate non beatae, ut quidem facere nemo assumenda temporibus pariatur officia amet vel voluptates at cumque quos.</p>
             <div class="card-footer">
-            <a href="#" class="btn btn-lg btn-outline-primary rounded-pill">Reflections</a>
+            <a href="#" class="btn btn-lg rounded-pill card-button">Reflections</a>
           </div>
         </div>
       </div>
