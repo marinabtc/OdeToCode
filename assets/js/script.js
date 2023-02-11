@@ -14,6 +14,12 @@ $("#main-input").on("keyup", function (event) {
   }
 });
 
+// When "Advanced search" is clicked remove anything in the main input box
+$(".adv-search").on("click", function () {
+
+  $("#main-input").val("");
+})
+
 function getPoem() {
   // Grabs the value of the search by option
   var selected = $(".form-select").val();
@@ -70,7 +76,7 @@ function getPoem() {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      
+
       if (typeof response === Array) {
         console.log(response);
 
