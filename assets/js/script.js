@@ -4,6 +4,10 @@ var lines;
 
 var linecount;
 
+$(window).load(function () {
+  getRandomPoemOnWindowLoad();
+});
+
 // When the search button is clicked gets the poem corresponding to the input search
 $("#search-button").on("click", getPoem);
 
@@ -11,15 +15,13 @@ $("#search-button").on("click", getPoem);
 $(".searchbar-whole").on("keyup", function (event) {
   if (event.key === "Enter" || event.keyCode === 13) {
     getPoem();
-
   }
 });
 
 // When "Advanced search" is clicked remove anything in the main search box
 $(".adv-search").on("click", function () {
-
   $("#main-input").val("");
-})
+});
 
 function getPoem() {
   // Grabs the value of the search by option
@@ -35,7 +37,6 @@ function getPoem() {
 
   console.log("INPUT is: " + mainInput);
   console.log("Advance search is: " + advAuthor, advTitle, advLines);
-
 
   // Only executes if the input is not empty
   if (mainInput !== "") {
@@ -98,7 +99,10 @@ function getPoem() {
         for (var i = 0; i < poemLines.length; i++) {
           console.log(poemLines[i]);
         }
+      } else {
+        $("#no-results").modal("show");
       }
+
 
       else {
         $("#no-results").modal("show");
@@ -108,39 +112,32 @@ function getPoem() {
   }
   // Advance search
   else {
-
     // search by author + title
     if (advAuthor !== "" && advTitle !== "" && advLines === "") {
-
       advAuthor.replace(" ", "%");
       advTitle.replace(" ", "%");
       queryURL = `https://poetrydb.org/author,title,poemcount/${advAuthor};${advTitle};1`;
-    
     }
 
     // search by author + lines
     else if (advAuthor !== "" && advTitle === "" && advLines !== "") {
-
       advAuthor.replace(" ", "%");
       advLines.replace(" ", "%");
       queryURL = `https://poetrydb.org/author,lines,poemcount/${advAuthor};${advLines};1`;
-
     }
 
     // search by title + lines
     else if (advAuthor === "" && advTitle !== "" && advLines !== "") {
-
       advTitle.replace(" ", "%");
       advLines.replace(" ", "%");
       queryURL = `https://poetrydb.org/title,lines,poemcount/${advTitle};${advLines};1`;
-    
     }
 
     else {
       $("#params").modal("show");
       return;
     }
-  
+
 
     // Call to the API using one of the queryURL value above
     $.ajax({
@@ -168,10 +165,12 @@ function getPoem() {
         //   console.log(poemLines[i]);
         // }
 
+
         renderPoem(response);
       }
 
       else {
+
         $("#no-results").modal("show");
       }
     });
@@ -182,26 +181,42 @@ function getPoem() {
   $("#adv-author").val("");
   $("#adv-title").val("");
   $("#adv-lines").val("");
-
 }
 
 // PoetryDB API path to get random poem: https://poetrydb.org/random
 var getRandomPoemQuery = `https://poetrydb.org/random`;
 
-$("#randomPoem").on("click", function () {
+function getRandomPoemOnWindowLoad() {
   $.ajax({
     url: getRandomPoemQuery,
     method: "GET",
   }).then(function (response) {
-    // console.log("random poem", response);
-    // log poem fields to console when "find me a poem" link is clicked from navbar
-    console.log(
-      `title: ${response[0].title}
-      \nauthor: ${response[0].author}
-      \npoem: ${response[0].lines}`
-    );
+    renderPoem(response);
   });
-});
+
+}
+
+function getRandomPoemOnClick() {
+  $("#randomPoem").on("click", function () {
+    $.ajax({
+      url: getRandomPoemQuery,
+      method: "GET",
+    }).then(function (response) {
+      // console.log("random poem", response);
+      // log poem fields to console when "find me a poem" link is clicked from navbar
+      // console.log(
+      //   `title: ${response[0].title}
+      // \nauthor: ${response[0].author}
+      // \npoem: ${response[0].lines}`
+      // );
+      renderPoem(response);
+      getRandomPoemOnClick();
+    });
+  });
+}
+
+getRandomPoemOnClick();
+
 
 
 // displays poem in the poem card
@@ -223,7 +238,11 @@ function renderPoem (response) {
   // loops through the lines array and add each lines to the poem card
   for (var i = 0; i < poemLines.length; i++) {
     // $(".Poem-Text").text(poemLines[0])
-    $(".POTD-Author").after(`<p class="Poem-Text d-flex justify-content-center">${poemLines[i]}</p>`);
+
+    $(".POTD-Author").after(
+      `<p class="Poem-Text d-flex justify-content-center">${poemLines[i]}</p>`
+    );
     // $(".Poem-Text").attr("class", "justify-content-center")
   }
 }
+
