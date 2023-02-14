@@ -107,7 +107,6 @@ function getPoem() {
       else {
         $("#no-results").modal("show");
       }
-
     });
   }
   // Advance search
@@ -193,7 +192,6 @@ function getRandomPoemOnWindowLoad() {
   }).then(function (response) {
     renderPoem(response);
   });
-
 }
 
 function getRandomPoemOnClick() {
@@ -202,26 +200,16 @@ function getRandomPoemOnClick() {
       url: getRandomPoemQuery,
       method: "GET",
     }).then(function (response) {
-      // console.log("random poem", response);
-      // log poem fields to console when "find me a poem" link is clicked from navbar
-      // console.log(
-      //   `title: ${response[0].title}
-      // \nauthor: ${response[0].author}
-      // \npoem: ${response[0].lines}`
-      // );
-      renderPoem(response);
-      getRandomPoemOnClick();
+      renderPoem(response)
     });
   });
 }
 
 getRandomPoemOnClick();
 
-
-
 // displays poem in the poem card
 function renderPoem (response) {
-  
+
   // gets the poem's title
   var poemTitle = response[0].title;
   // adds title to the poem card
