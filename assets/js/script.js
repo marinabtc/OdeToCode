@@ -4,6 +4,8 @@ var lines;
 
 var linecount;
 
+var searchHistory
+
 // When the search button is clicked gets the poem corresponding to the input search
 $("#search-button").on("click", getPoem);
 
@@ -104,4 +106,20 @@ $("#randomPoem").on("click", function () {
       \npoem: ${response[0].lines}`
     );
   });
+});
+
+// Modal popup save to local storage
+
+document.getElementById("button").addEventListener("click", function() {
+  // code to save to local storage
+});
+document.getElementById("button").addEventListener("click", function() {
+  var note = document.getElementById("newnote").value;
+  localStorage.setItem("note", note);
+});
+window.addEventListener("load", function() {
+  var note = localStorage.getItem("note");
+  if (note) {
+    document.getElementById("newnote").value = note;
+  }
 });
