@@ -145,23 +145,25 @@ function getPoem() {
       if (response[0] !== undefined) {
         console.log(response);
 
-        // gets the poem's title
-        var poemTitle = response[0].title;
-        console.log("Title: " + poemTitle);
+        // // gets the poem's title
+        // var poemTitle = response[0].title;
+        // console.log("Title: " + poemTitle);
 
-        // gets the poem's author
-        var poemAuthor = response[0].author;
-        console.log("Author: " + poemAuthor);
+        // // gets the poem's author
+        // var poemAuthor = response[0].author;
+        // console.log("Author: " + poemAuthor);
 
-        // gets the poem's lines
-        var poemLines = response[0].lines;
+        // // gets the poem's lines
+        // var poemLines = response[0].lines;
 
-        console.log("Lines: ");
+        // console.log("Lines: ");
 
-        // loops through the lines array
-        for (var i = 0; i < poemLines.length; i++) {
-          console.log(poemLines[i]);
-        }
+        // // loops through the lines array
+        // for (var i = 0; i < poemLines.length; i++) {
+        //   console.log(poemLines[i]);
+        // }
+
+        renderPoem(response);
       }
 
       else {
@@ -195,3 +197,28 @@ $("#randomPoem").on("click", function () {
     );
   });
 });
+
+
+// displays poem in the poem card
+function renderPoem (response) {
+  
+  // gets the poem's title
+  var poemTitle = response[0].title;
+  // adds title to the poem card
+  $(".POTD-Title").text(poemTitle);
+
+  // gets the poem's author
+  var poemAuthor = response[0].author;
+  // adds author to the poem card
+  $(".POTD-Author").text(poemAuthor);
+
+  // gets the poem's lines
+  var poemLines = response[0].lines;
+
+  // loops through the lines array and add each lines to the poem card
+  for (var i = 0; i < poemLines.length; i++) {
+    // $(".Poem-Text").text(poemLines[0])
+    $(".POTD-Author").after(`<p class="Poem-Text d-flex justify-content-center">${poemLines[i]}</p>`);
+    // $(".Poem-Text").attr("class", "justify-content-center")
+  }
+}
