@@ -78,7 +78,6 @@ function getPoem() {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-
       if (response[0] !== undefined) {
         console.log(response);
 
@@ -100,11 +99,6 @@ function getPoem() {
           console.log(poemLines[i]);
         }
       } else {
-        $("#no-results").modal("show");
-      }
-
-
-      else {
         $("#no-results").modal("show");
       }
     });
@@ -132,12 +126,6 @@ function getPoem() {
       queryURL = `https://poetrydb.org/title,lines,poemcount/${advTitle};${advLines};1`;
     }
 
-    else {
-      $("#params").modal("show");
-      return;
-    }
-
-
     // Call to the API using one of the queryURL value above
     $.ajax({
       url: queryURL,
@@ -164,12 +152,8 @@ function getPoem() {
         //   console.log(poemLines[i]);
         // }
 
-
         renderPoem(response);
-      }
-
-      else {
-
+      } else {
         $("#no-results").modal("show");
       }
     });
@@ -201,7 +185,15 @@ function getRandomPoemOnClick() {
       url: getRandomPoemQuery,
       method: "GET",
     }).then(function (response) {
-      renderPoem(response)
+      // console.log("random poem", response);
+      // log poem fields to console when "find me a poem" link is clicked from navbar
+      // console.log(
+      //   `title: ${response[0].title}
+      // \nauthor: ${response[0].author}
+      // \npoem: ${response[0].lines}`
+      // );
+      renderPoem(response);
+      getRandomPoemOnClick();
     });
   });
 }
@@ -209,8 +201,7 @@ function getRandomPoemOnClick() {
 getRandomPoemOnClick();
 
 // displays poem in the poem card
-function renderPoem (response) {
-
+function renderPoem(response) {
   // gets the poem's title
   var poemTitle = response[0].title;
   // adds title to the poem card
@@ -227,11 +218,9 @@ function renderPoem (response) {
   // loops through the lines array and add each lines to the poem card
   for (var i = 0; i < poemLines.length; i++) {
     // $(".Poem-Text").text(poemLines[0])
-
     $(".POTD-Author").after(
       `<p class="Poem-Text d-flex justify-content-center">${poemLines[i]}</p>`
     );
     // $(".Poem-Text").attr("class", "justify-content-center")
   }
 }
-
