@@ -99,7 +99,10 @@ function getPoem() {
         for (var i = 0; i < poemLines.length; i++) {
           console.log(poemLines[i]);
         }
+      } else {
+        $("#no-results").modal("show");
       }
+
 
       else {
         $("#no-results").modal("show");
@@ -133,7 +136,7 @@ function getPoem() {
       $("#params").modal("show");
       return;
     }
-  
+
 
     // Call to the API using one of the queryURL value above
     $.ajax({
@@ -161,10 +164,12 @@ function getPoem() {
         //   console.log(poemLines[i]);
         // }
 
+
         renderPoem(response);
       }
 
       else {
+
         $("#no-results").modal("show");
       }
     });
@@ -196,12 +201,11 @@ function getRandomPoemOnClick() {
       method: "GET",
     }).then(function (response) {
       renderPoem(response)
-      // getRandomPoemOnClick();
     });
   });
 }
-getRandomPoemOnClick();
 
+getRandomPoemOnClick();
 
 // displays poem in the poem card
 function renderPoem (response) {
@@ -222,7 +226,11 @@ function renderPoem (response) {
   // loops through the lines array and add each lines to the poem card
   for (var i = 0; i < poemLines.length; i++) {
     // $(".Poem-Text").text(poemLines[0])
-    $(".POTD-Author").after(`<p class="Poem-Text d-flex justify-content-center">${poemLines[i]}</p>`);
+
+    $(".POTD-Author").after(
+      `<p class="Poem-Text d-flex justify-content-center">${poemLines[i]}</p>`
+    );
     // $(".Poem-Text").attr("class", "justify-content-center")
   }
 }
+
