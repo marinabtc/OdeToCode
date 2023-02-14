@@ -135,6 +135,11 @@ function getPoem() {
       queryURL = `https://poetrydb.org/title,lines,poemcount/${advTitle};${advLines};1`;
     
     }
+
+    else {
+      $("#params").modal("show");
+      return;
+    }
   
 
     // Call to the API using one of the queryURL value above
