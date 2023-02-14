@@ -53,6 +53,8 @@ body {
     font-family: 'Satisfy', cursive !important;
     text-decoration: none !important;
     transition: 0.5s !important;
+    text-align: center !important;
+    padding: 0px;
 }
 
 .customNav a:hover {
@@ -127,14 +129,19 @@ body {
     transition: all 0.5s ease-in-out !important;
     text-shadow: 0px 0px 8px var(--white), 0 0 15px var(--white) !important;
 }
- /* align the dropdown class to center the dropdown in the div */
-.dropdown {
-    text-align: center;
-margin-top: 10px;
+
+.poem-search-button, .searchbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.poem-search-button {
-    text-align: center;
-    padding: 1px !important;
+
+
+ /* align the dropdown class to center the dropdown in the div */
+.dropdown-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card-button {
@@ -151,3 +158,41 @@ margin-top: 10px;
 .hide {
     display: none;
 }
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
