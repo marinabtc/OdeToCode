@@ -69,7 +69,7 @@ function getPoem() {
 
     // If nothing is selected
     else {
-      alert("Please select a search parameter.");
+      $("#no-search-by").modal("show");
     }
 
     // Call to the API using one of the queryURL value above
@@ -85,12 +85,6 @@ function getPoem() {
         var poemTitle = response[0].title;
         console.log("Title: " + poemTitle);
 
-// <<<<<<< feature-searchby-modal
-        // If nothing is selected
-        else {
-            // alert("Please select a search parameter.")
-            $("#no-search-by").modal("show");
-=======
         // gets the poem's author
         var poemAuthor = response[0].author;
         console.log("Author: " + poemAuthor);
