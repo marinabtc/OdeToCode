@@ -180,25 +180,32 @@ function getPoem() {
 // PoetryDB API path to get random poem: https://poetrydb.org/random
 var getRandomPoemQuery = `https://poetrydb.org/random`;
 
-$("#randomPoem").on("click", function () {
+function getRandomPoemOnWindowLoad() {
   $.ajax({
     url: getRandomPoemQuery,
     method: "GET",
   }).then(function (response) {
-    // console.log("random poem", response);
-    // log poem fields to console when "find me a poem" link is clicked from navbar
-    console.log(
-      `title: ${response[0].title}
-      \nauthor: ${response[0].author}
-      \npoem: ${response[0].lines}`
-    );
+    renderPoem(response);
   });
-});
+}
+
+function getRandomPoemOnClick() {
+  $("#randomPoem").on("click", function () {
+    $.ajax({
+      url: getRandomPoemQuery,
+      method: "GET",
+    }).then(function (response) {
+      renderPoem(response)
+      // getRandomPoemOnClick();
+    });
+  });
+}
+getRandomPoemOnClick();
 
 
 // displays poem in the poem card
 function renderPoem (response) {
-  
+
   // gets the poem's title
   var poemTitle = response[0].title;
   // adds title to the poem card
