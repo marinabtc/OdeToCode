@@ -111,7 +111,7 @@ $("#randomPoem").on("click", function () {
 // Modal popup save to local storage
 
 document.getElementById("button").addEventListener("click", function() {
-  // code to save to local storage
+  // save to local storage
 });
 document.getElementById("button").addEventListener("click", function() {
   var note = document.getElementById("newnote").value;
