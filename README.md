@@ -22,19 +22,19 @@ To achieve the goals above, we made use of the [PoetryDB](https://poetrydb.org/i
 Via this API we where able to use the following routes to obtain the information our web application currently displays.
 
 - Display 1 poem by an author specified by the user
-  - https://poetrydb.org/author,random/author;1`;
+  - https://poetrydb.org/author,random/author;1;
 - Display 1 poem by a title specified by the user
-  - https://poetrydb.org/title,random/title;1`;
+  - https://poetrydb.org/title,random/title;1;
 - Display 1 poem by words/lines specified by the user
-  - https://poetrydb.org/lines,random/lines;1`;
+  - https://poetrydb.org/lines,random/lines;1;
 - ???
-  - https://poetrydb.org/author,title,poemcount/author;title;1`;
+  - https://poetrydb.org/author,title,poemcount/author;title;1;
 - ???
-  - https://poetrydb.org/author,lines,poemcount/author;lines;1`;
+  - https://poetrydb.org/author,lines,poemcount/author;lines;1;
 - ???
-  - https://poetrydb.org/title,lines,poemcount/title;lines;1`;
+  - https://poetrydb.org/title,lines,poemcount/title;lines;1;
 - Fetch a completely random poem
-  - https://poetrydb.org/random`;
+  - https://poetrydb.org/random;
 
 By using the advance search bar, the user can enter the poetry parameters of their choosing and get a poem in return.
 
