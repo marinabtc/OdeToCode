@@ -169,6 +169,7 @@ function getPoem() {
 // PoetryDB API path to get random poem: https://poetrydb.org/random
 var getRandomPoemQuery = `https://poetrydb.org/random`;
 
+// display random poem when page loads
 function getRandomPoemOnWindowLoad() {
   $.ajax({
     url: getRandomPoemQuery,
