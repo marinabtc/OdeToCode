@@ -85,6 +85,12 @@ function getPoem() {
         var poemTitle = response[0].title;
         console.log("Title: " + poemTitle);
 
+// <<<<<<< feature-searchby-modal
+        // If nothing is selected
+        else {
+            // alert("Please select a search parameter.")
+            $("#no-search-by").modal("show");
+=======
         // gets the poem's author
         var poemAuthor = response[0].author;
         console.log("Author: " + poemAuthor);
@@ -97,6 +103,7 @@ function getPoem() {
         // loops through the lines array
         for (var i = 0; i < poemLines.length; i++) {
           console.log(poemLines[i]);
+// >>>>>>> main
         }
       }
 
