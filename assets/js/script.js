@@ -103,10 +103,6 @@ function getPoem() {
         $("#no-results").modal("show");
       }
 
-
-      else {
-        $("#no-results").modal("show");
-      }
     });
   }
   // Advance search
