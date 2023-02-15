@@ -232,5 +232,20 @@ function getRandomPoets() {
     var poet1 = $(".Poet-Sug-Btn-1").text(response[0].author);
     var poet2 = $(".Poet-Sug-Btn-2").text(response[1].author);
     var poet3 = $(".Poet-Sug-Btn-3").text(response[2].author);
+
+    for (let i = 0; i < 4; i++) {
+      $(`.Poet-Sug-Btn-${i}`).on("click", function () {
+        var authorPoemQuery = `https://poetrydb.org/author,random/${$(
+          `.Poet-Sug-Btn-${i}`
+        ).text()};1`;
+
+        $.ajax({
+          url: authorPoemQuery,
+          method: "GET",
+        }).then(function (response) {
+          renderPoem(response);
+        });
+      });
+    }
   });
 }
