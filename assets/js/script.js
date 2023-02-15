@@ -192,6 +192,8 @@ getRandomPoemOnClick();
 // displays poem in the poem card
 function renderPoem (response) {
 
+  $(".Poem-Text").empty();
+
   // gets the poem's title
   var poemTitle = response[0].title;
   // adds title to the poem card
@@ -212,7 +214,8 @@ function renderPoem (response) {
     $(".POTD-Author").after(
       `<p class="Poem-Text d-flex justify-content-center">${poemLines[i]}</p>`
     );
-    // $(".Poem-Text").attr("class", "justify-content-center")
+
+
   }
 }
 
