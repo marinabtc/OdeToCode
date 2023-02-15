@@ -6,6 +6,7 @@ var linecount;
 
 $(window).load(function () {
   getRandomPoemOnWindowLoad();
+  getRandomPoets();
 });
 
 // When the search button is clicked gets the poem corresponding to the input search
@@ -78,7 +79,6 @@ function getPoem() {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-
       if (response[0] !== undefined) {
         console.log(response);
 
@@ -102,7 +102,6 @@ function getPoem() {
       } else {
         $("#no-results").modal("show");
       }
-
     });
   }
   // Advance search
@@ -126,13 +125,10 @@ function getPoem() {
       advTitle.replace(" ", "%");
       advLines.replace(" ", "%");
       queryURL = `https://poetrydb.org/title,lines,poemcount/${advTitle};${advLines};1`;
-    }
-
-    else {
+    } else {
       $("#params").modal("show");
       return;
     }
-
 
     // Call to the API using one of the queryURL value above
     $.ajax({
@@ -160,12 +156,8 @@ function getPoem() {
         //   console.log(poemLines[i]);
         // }
 
-
         renderPoem(response);
-      }
-
-      else {
-
+      } else {
         $("#no-results").modal("show");
       }
     });
@@ -197,7 +189,7 @@ function getRandomPoemOnClick() {
       url: getRandomPoemQuery,
       method: "GET",
     }).then(function (response) {
-      renderPoem(response)
+      renderPoem(response);
     });
   });
 }
@@ -205,8 +197,7 @@ function getRandomPoemOnClick() {
 getRandomPoemOnClick();
 
 // displays poem in the poem card
-function renderPoem (response) {
-
+function renderPoem(response) {
   // gets the poem's title
   var poemTitle = response[0].title;
   // adds title to the poem card
@@ -231,3 +222,15 @@ function renderPoem (response) {
   }
 }
 
+var getRandomPoetListQuery = `https://poetrydb.org/random/3/author`;
+
+function getRandomPoets() {
+  $.ajax({
+    url: getRandomPoetListQuery,
+    method: "GET",
+  }).then(function (response) {
+    var poet1 = $(".Poet-Sug-Btn-1").text(response[0].author);
+    var poet2 = $(".Poet-Sug-Btn-2").text(response[1].author);
+    var poet3 = $(".Poet-Sug-Btn-3").text(response[2].author);
+  });
+}
