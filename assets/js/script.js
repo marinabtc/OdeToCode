@@ -222,13 +222,14 @@ function renderPoem(response) {
   }
 }
 
-var getRandomPoetListQuery = `https://poetrydb.org/random/3/author`;
+var getRandomPoetsListQuery = `https://poetrydb.org/random/3/author`;
 
 function getRandomPoets() {
   $.ajax({
-    url: getRandomPoetListQuery,
+    url: getRandomPoetsListQuery,
     method: "GET",
   }).then(function (response) {
+    // target each of the poet links/buttons in poet suggestions and change their text based on the query response
     var poet1 = $(".Poet-Sug-Btn-1").text(response[0].author);
     var poet2 = $(".Poet-Sug-Btn-2").text(response[1].author);
     var poet3 = $(".Poet-Sug-Btn-3").text(response[2].author);
