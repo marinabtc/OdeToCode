@@ -234,3 +234,20 @@ function getRandomPoets() {
     }
   });
 }
+// modal local storage
+
+document.querySelector('.modal-footer button').addEventListener('click', function() {
+  var note = document.getElementById('newnote').value;
+  localStorage.setItem('reflexions', note);
+});
+
+document.getElementById('exampleModal').addEventListener('show.bs.modal', function() {
+  var note = localStorage.getItem('reflexions');
+  if (note) {
+    document.getElementById('newnote').value = note;
+  }
+});
+
+
+
+
