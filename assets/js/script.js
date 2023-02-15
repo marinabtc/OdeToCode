@@ -254,7 +254,7 @@ function getRandomPoets() {
 // Displays the reflections on the journal page
 renderReflections();
 
-//
+// When reflection button clicked the input is save to local storage
 $("#reflection-button").on("click", save);
 
 var now = moment();
@@ -284,7 +284,7 @@ function save(){
 
   }
 
-    // when the local storage is empty
+  // when the local storage is empty
   else {
 
     reflectArr.push(reflectData);
@@ -293,6 +293,7 @@ function save(){
 
 }
 
+// Displays the reflections on the journal page in a card format
 function renderReflections() {
 
     var reflectArr = JSON.parse(localStorage.getItem("reflections"));
@@ -315,13 +316,6 @@ function renderReflections() {
               </div>
             </div>`)
 
-
-      //     $(".journal-entries").append(`<pre>
-      //     ${entry.date}
-      //     ${entry.author}
-      //     ${entry.title}
-      //     ${entry.reflections}
-      //     </pre>`)
       }
     }
 }
