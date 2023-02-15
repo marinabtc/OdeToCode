@@ -78,9 +78,9 @@
           </div>
 
           <div class="col-md-3 poem-search-button p-1">
-            <button class="btn rounded-pill" id="search-button">Search Poem</button>
+            <button class="btn rounded-pill search-bar-button" id="search-button">Search Poem</button>
             <!-- this was the random poem link, it has now been turned into a button -->
-            <button class="btn rounded-pill" id="randomPoem">Random Poem</button>
+            <button class="btn rounded-pill search-bar-button" id="randomPoem">Random Poem</button>
             <!-- Added id to target the search button -->
           </div>
         </div>
@@ -125,12 +125,17 @@
 
   <!-- End of search results hidden divs  -->
   <!-- Poem of the day container -->
-  <section class="container">
+  <section class="container poem-container">
     <h5 class="POTD POTD-Intro  justify-content-center">Random Poem of the Day</h5>
-    <div class="row">
-      <div class="card">
-        <img class="card-img" src="./assets/Images/placeholder.png" alt="Card image">
-        <div class="card-img-overlay overflow-auto">
+
+    
+    <div class="row justify-content-center">
+
+      <div class="card background-image-card">
+
+        <!-- <img class="card-img" src="./assets/Images/placeholder.png" alt="Card image"> -->
+        <img class="card-img poem-image" src="./assets/Images/paper-jumbotron-small-c.png" alt="Card image">
+        <div class="card-img-overlay overflow-auto poem-text-margins">
           <h5 class="POTD POTD-Title  justify-content-center"></h5>
           <h5 class="POTD POTD-Author  justify-content-center"></h5>
           <!-- <p class="Poem Poem-Text">This is a wider card with supporting text below as a natural lead-in to additional
@@ -138,13 +143,12 @@
         </div>
       </div>
     </div>
-    
     <!-- User reflections button to open modal that will contain form for them to enter reflections -->
     
-    <div class="row justify-content-center my-4">
+    <div class="row justify-content-center">
       <button type="button" class="align-self-end btn btn-lg rounded-pill" id="myBtn">Your Reflections</button>
     </div>
-    <div class="row justify-content-center my-4">
+    <div class="row justify-content-center">
 
 
     </section>
@@ -153,50 +157,32 @@
 <section class="container">
   <div class="row">
 
-    <div class="col-lg-4 col-md-12 col-sm-12 p-4 text-center">
-      <div class="card">
-      <div class="card-body">
-        <h5 class="card-title Poet-Sug-Title">Need Some Poet Suggestions?</h5>
-        <p class="card-text">Click one of the random  authors below to display a poem of theirs in the card above.</p>
-        <div class="card-footer">
-        <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-1 card-button my-1 rounded-pill">William Blake</a>
-        <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-2 card-button my-1 rounded-pill">Fatimah Asghar</a>
-        <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-3 card-button my-1 rounded-pill">James Baldwin</a>
-      </div>
-    </div>   
-  </div> 
-  </div>
-  
-          <div class="col-lg-4 col-md-6 col-sm-12 p-4 text-center">
-            <div class="card">
-            <div class="card-body">
-            <h5 class="card-title">Your Poetry Stats</h5>
-            <p class="card-text">You have reviewed <span>INSERT NUMBER OF REVIEWED POEMS</span> poems so far.</p>
-            <div class="card-footer">
-            <a href="./journal.html" class="align-self-end btn btn-lg  rounded-pill card-button">Go To Your Journal</a>
-          </div>
-        </div>
-      </div>
 
-      <div class="col-lg-4 col-md-6 p-4 text-center">
-        <div class="card">
+        <div class="col-lg-4 col-md-12 col-sm-12 p-4 text-center">
+          <div class="card">
           <div class="card-body">
             <h5 class="card-title Poet-Sug-Title">Need Some Poet Suggestions?</h5>
-            <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique est voluptas
-              veritatis alias recusandae atque consectetur quis? Aliquid ducimus non reiciendis excepturi? Rem mollitia
-              voluptatibus adipisci eius. Natus, exercitationem magnam.</p>
+            <p class="card-text">Click one of the random  authors below to display a poem of theirs in the card above.</p>
             <div class="card-footer">
-              <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-1 card-button my-1 rounded-pill">William
-                Blake</a>
-              <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-2 card-button my-1 rounded-pill">Fatimah
-                Asghar</a>
-              <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-3 card-button my-1 rounded-pill">James
-                Baldwin</a>
-            </div>
+            <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-1 card-button my-1 rounded-pill">William Blake</a>
+            <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-2 card-button my-1 rounded-pill">Fatimah Asghar</a>
+            <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-3 card-button my-1 rounded-pill">James Baldwin</a>
           </div>
-        </div>
+        </div>   
+      </div> 
       </div>
-
+      
+      <div class="col-lg-4 col-md-6 col-sm-12 p-4 text-center">
+        <div class="card">
+        <div class="card-body">
+        <h5 class="card-title">Your Poetry Stats</h5>
+        <p class="card-text">You have reviewed <span>INSERT NUMBER OF REVIEWED POEMS</span> poems so far.</p>
+        <div class="card-footer">
+        <a href="./journal.html" class="align-self-end btn btn-lg  rounded-pill card-button">Visit Your Journal</a>
+      </div>
+      </div>   
+    </div> 
+    </div>
       
       <div class="col-lg-4 col-md-6 col-sm-12 p-4 text-center">
         <div class="card">
@@ -205,12 +191,14 @@
             <p class="card-text">Please click the button below to get in touch by email.</p>
             <div class="card-footer">
             <a href="mailto:email@email.com?Subject=Ode-To-Code%20Comment%20or%20Issue&Body=Dear%20Ode-To-Code%2C" class="btn btn-lg rounded-pill card-button">Contact Us</a>
-
           </div>
         </div>   
       </div> 
       </div>
-    </div>
+      </div>
+
+    </section>
+
 
 
   </section>
@@ -269,7 +257,7 @@
             </button>
           </div>
           <div class="modal-body">
-            Please enter 2 search terms when using the advance search.
+            Please enter exactly 2 search terms when using the advance search.
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -5,7 +5,7 @@
     
     --white: rgb(249, 249, 249);
     --teal: rgb(52, 165, 165);
-    /* --light-teal: rgb(54, 116, 116); */
+    --dark-teal: rgb(52, 136, 136);
     --light-teal: rgb(141, 149, 165);
     /* --teal: rgba(99, 68, 0, 1); */
     --forest-green: rgb(4, 92, 55);
@@ -13,7 +13,78 @@
     --forest-green-light: rgb(161, 134, 44);
     --lime: rgb(164, 202, 113);
     --ink-pen: rgb(10, 9, 10);
-    --ink-white: rgb(175, 174, 174);
+    --ink-white: rgb(99, 98, 98);
+}
+
+
+@media screen and (max-width: 1449px) {
+    .POTD-Title, .POTD-Author {
+        color: var(--dark-teal);
+        text-shadow: 0px 1px 1px rgba(46, 46, 46, 0.747);
+        font-size: 1.75em;
+        font-family: 'Dancing Script', cursive;
+        line-height: 1.1 !important;
+    }
+    
+    /* style .Poem-Text so it is dark grey and script  */
+    .Poem-Text {
+        color: var(--ink-pen);
+        /* color: var(--ink-white); */
+        text-shadow: 0px 1px 1px rgba(145, 145, 145, 0.486);
+        font-size: 1.5em;
+        text-align: left;
+        font-family: 'Dancing Script', cursive;
+        line-height: 1.1 !important;
+    }
+
+    .POTD-Intro, .journal-Intro, .search-result-title {
+        color: var(--dark-ochre);
+        font-size: 2.2em !important;
+        text-decoration-line: underline;
+        border: 0;
+    }
+
+    .poem-text-margins {
+        margin-top: 8.5em !important;
+        margin-bottom: 8.8em !important;
+        margin-right: 3em !important;
+        margin-left: 3em !important;
+    }
+}
+
+@media screen and (min-width: 1450px) {
+.POTD-Title, .POTD-Author {
+    color: var(--dark-teal);
+    text-shadow: 0px 2px 2px rgb(0, 0, 0);
+    font-size: 1.8vw;
+    font-family: 'Dancing Script', cursive;
+    line-height: 1.3 !important;
+}
+
+/* style .Poem-Text so it is dark grey and script  */
+.Poem-Text {
+    color: var(--ink-pen);
+    /* color: var(--ink-white); */
+    text-shadow: 0px 1px 1px rgba(145, 145, 145, 0.486);
+    font-size: 1.6vw;
+    text-align: left;
+    font-family: 'Dancing Script', cursive;
+    line-height: 1.1 !important;
+}
+
+.POTD-Intro, .journal-Intro, .search-result-title {
+    color: var(--dark-ochre);
+    font-size: 2.2vw !important;
+    text-decoration-line: underline;
+    border: 0;
+}
+
+.poem-text-margins {
+    margin-top: 8.5em !important;
+    margin-bottom: 8.8em !important;
+    margin-right: 3.5em !important;
+    margin-left: 3.5em !important;
+}
 }
 
 h5 {
@@ -55,7 +126,15 @@ body {
     transition: 0.5s !important;
     text-align: center !important;
     padding: 0px;
+    text-decoration: none !important;
 }
+
+/* on hover make the .logo element glow as the rest of the links */
+.Logo:hover {
+    transition: all 0.5s ease-in-out !important;
+    text-shadow: 0px 0px 8px var(--white), 0 0 15px var(--white) !important;
+}
+
 
 .customNav a:hover {
     transition: all 0.5s ease-in-out !important;
@@ -71,6 +150,16 @@ body {
     padding: 25px !important;
 }
 
+
+/* make the background of the poem container transparent */
+
+
+.poem-container {
+    background-color: rgba(255, 255, 255, 0) !important;
+  }
+
+  
+
 /* align the POTD-Intro to centre and give the text a shadow */
 .POTD-Intro, .journal-Intro, .search-result-title {
     font-family: 'Satisfy', cursive;
@@ -83,22 +172,12 @@ body {
 .POTD-Intro, .journal-Intro, .search-result-title {
     color: var(--dark-ochre);
     font-size: 2.5em;
+    /* font-size: 2.25vw; */
     text-decoration-line: underline;
-}
-.POTD-Title, .POTD-Author {
-    color: var(--teal);
-    font-size: 1.5em;
+    border: 0;
 }
 
-/* style .Poem-Text so it is dark grey and script  */
-.Poem-Text {
-    /* color: var(--ink-pen); */
-    color: var(--ink-white);
-    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.486);
-    font-size: 1.5em;
-    text-align: left;
-    /* font-family: 'Dancing Script', cursive; */
-}
+
 /* make text shadow a drop shadow */
 
 .mt-3 a{
@@ -144,6 +223,11 @@ body {
     align-items: center;
 }
 
+/* adding padding to the search filter for symmetry */
+.search-by-dropdown {
+    padding: 6px;
+}
+
 .card-button {
     font-size: 15px !important;
 }
@@ -157,4 +241,47 @@ body {
 
 .hide {
     display: none;
+}
+
+.search-bar-button {
+    margin: 5px;
+    padding: 6px;
+}
+
+/* make the background of the poem container transparent */
+
+.background-image-card {
+    background: url("../Images/paper-jumbotron-small-c.png") no-repeat;
+    background-size: cover;
+    border: 0;
+}
+/* .poem-text-margins {
+    margin-top: 10vw !important;
+    margin-bottom: 11vw !important;
+    margin-right: 3vw !important;
+    margin-left: 3vw !important;
+} */
+
+
+
+/* searchbar styling to work within the poem and on the main page */
+/* width */
+::-webkit-scrollbar {
+width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: rgba(241, 241, 241, 0); 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: rgba(255, 255, 255, 0.8);
+border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #555; 
 }
