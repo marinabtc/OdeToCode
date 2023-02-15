@@ -235,18 +235,102 @@ function getRandomPoets() {
   });
 }
 // modal local storage
+// Sucaad
+// document.querySelector('.modal-footer button').addEventListener('click', function() {
+//   var note = document.getElementById('newnote').value;
+//   localStorage.setItem('reflections', note);
+// });
 
-document.querySelector('.modal-footer button').addEventListener('click', function() {
-  var note = document.getElementById('newnote').value;
-  localStorage.setItem('reflexions', note);
-});
+// document.getElementById('exampleModal').addEventListener('show.bs.modal', function() {
+//   var note = localStorage.getItem('reflections');
+//   if (note) {
+//     document.getElementById('newnote').value = note;
+//   }
+// });
 
-document.getElementById('exampleModal').addEventListener('show.bs.modal', function() {
-  var note = localStorage.getItem('reflexions');
-  if (note) {
-    document.getElementById('newnote').value = note;
+
+// MT
+
+// Displays the reflections on the journal page
+renderReflections();
+
+//
+$("#reflection-button").on("click", save);
+
+var now = moment();
+var reflectArr = [];
+
+function save(){
+  // id to updated when reflection modal has been added 
+  var reflections = $("#reflection-input").val();
+  console.log(reflections)
+  var reflectData = {
+    date: now.format("MMMM DD, YYYY - hh:mm"), 
+    title: $(".POTD-Title").text(), 
+    author: $(".POTD-Author").text(), 
+    reflections: reflections
   }
-});
+
+  console.log(reflectData);
+  console.log(JSON.parse(localStorage.getItem("reflections")));
+
+  // when the local storage is not empty
+  if (JSON.parse(localStorage.getItem("reflections")) != null ) {
+
+    reflectArr = JSON.parse(localStorage.getItem("reflections"));
+    reflectArr.push(reflectData);
+        
+    localStorage.setItem("reflections", JSON.stringify(reflectArr));
+
+  }
+
+    // when the local storage is empty
+  else {
+
+    reflectArr.push(reflectData);
+    localStorage.setItem("reflections", JSON.stringify(reflectArr));
+  }
+
+}
+
+function renderReflections() {
+
+    var reflectArr = JSON.parse(localStorage.getItem("reflections"));
+
+    if (reflectArr !== null) {
+
+      for (var i = 0; i < reflectArr.length; i++) {
+          console.log(reflectArr[i])
+
+          var entry = reflectArr[i];
+          console.log(entry);
+
+          $(".journal-entries").append(
+            `<div class="card mb-3" style="margin: 20px;">
+              <div class="card-header"><b>${entry.date}</b></div>
+              <div class="card-body text-primary">
+                <h5 class="card-title">${entry.author} - <i>${entry.title}</i>
+                </h5>
+                <p class="card-text">${entry.reflections}</p>
+              </div>
+            </div>`)
+
+
+      //     $(".journal-entries").append(`<pre>
+      //     ${entry.date}
+      //     ${entry.author}
+      //     ${entry.title}
+      //     ${entry.reflections}
+      //     </pre>`)
+      }
+    }
+}
+
+
+
+
+
+
 
 
 

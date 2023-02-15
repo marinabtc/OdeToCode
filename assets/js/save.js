@@ -6,7 +6,7 @@ var now = moment();
 renderReflexions();
 
 // to do: id to updated when reflexion modal has been added
-$("#reflexion-button").on("click", save);
+$("#reflection-button").on("click", save);
 
 function save(){
     // id to updated when reflexion modal has been added 
