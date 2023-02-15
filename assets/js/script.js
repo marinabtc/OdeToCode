@@ -248,6 +248,12 @@ document.getElementById('exampleModal').addEventListener('show.bs.modal', functi
   }
 });
 
+//number of cards
+//const poems = ["Poem 1", "Poem 2", "Poem 3"];
+//const poemsCountElement = document.getElementById("poems-count");
+//poemsCountElement.textContent = poems.length;
+
+
 
 
 
