@@ -6,6 +6,7 @@ var linecount;
 
 $(window).load(function () {
   getRandomPoemOnWindowLoad();
+  getRandomPoets();
 });
 
 // When the search button is clicked gets the poem corresponding to the input search
@@ -78,7 +79,6 @@ function getPoem() {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-
       if (response[0] !== undefined) {
         console.log(response);
 
@@ -101,12 +101,9 @@ function getPoem() {
         // }
 
         renderPoem(response);
-
-
       } else {
         $("#no-results").modal("show");
       }
-
     });
   }
   // Advance search
@@ -130,13 +127,10 @@ function getPoem() {
       advTitle.replace(" ", "%");
       advLines.replace(" ", "%");
       queryURL = `https://poetrydb.org/title,lines,poemcount/${advTitle};${advLines};1`;
-    }
-
-    else {
+    } else {
       $("#params").modal("show");
       return;
     }
-
 
     // Call to the API using one of the queryURL value above
     $.ajax({
@@ -147,10 +141,7 @@ function getPoem() {
         console.log(response);
 
         renderPoem(response);
-      }
-
-      else {
-
+      } else {
         $("#no-results").modal("show");
       }
     });
@@ -182,7 +173,7 @@ function getRandomPoemOnClick() {
       url: getRandomPoemQuery,
       method: "GET",
     }).then(function (response) {
-      renderPoem(response)
+      renderPoem(response);
     });
   });
 }
@@ -190,8 +181,7 @@ function getRandomPoemOnClick() {
 getRandomPoemOnClick();
 
 // displays poem in the poem card
-function renderPoem (response) {
-
+function renderPoem(response) {
   $(".Poem-Text").empty();
 
   // gets the poem's title
@@ -214,8 +204,33 @@ function renderPoem (response) {
     $(".POTD-Author").after(
       `<p class="Poem-Text d-flex justify-content-center">${poemLines[i]}</p>`
     );
-
-
   }
 }
 
+var getRandomPoetListQuery = `https://poetrydb.org/random/3/author`;
+
+function getRandomPoets() {
+  $.ajax({
+    url: getRandomPoetListQuery,
+    method: "GET",
+  }).then(function (response) {
+    var poet1 = $(".Poet-Sug-Btn-1").text(response[0].author);
+    var poet2 = $(".Poet-Sug-Btn-2").text(response[1].author);
+    var poet3 = $(".Poet-Sug-Btn-3").text(response[2].author);
+
+    for (let i = 0; i < 4; i++) {
+      $(`.Poet-Sug-Btn-${i}`).on("click", function () {
+        var authorPoemQuery = `https://poetrydb.org/author,random/${$(
+          `.Poet-Sug-Btn-${i}`
+        ).text()};1`;
+
+        $.ajax({
+          url: authorPoemQuery,
+          method: "GET",
+        }).then(function (response) {
+          renderPoem(response);
+        });
+      });
+    }
+  });
+}
