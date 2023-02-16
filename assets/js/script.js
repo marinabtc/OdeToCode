@@ -247,19 +247,90 @@ function getRandomPoets() {
   });
 }
 
+// Sucaad
 // modal local storage
-document
-  .querySelector(".modal-footer button")
-  .addEventListener("click", function () {
-    var note = document.getElementById("newnote").value;
-    localStorage.setItem("reflexions", note);
-  });
+// document
+//   .querySelector(".modal-footer button")
+//   .addEventListener("click", function () {
+//     var note = document.getElementById("newnote").value;
+//     localStorage.setItem("reflexions", note);
+//   });
 
-document
-  .getElementById("exampleModal")
-  .addEventListener("show.bs.modal", function () {
-    var note = localStorage.getItem("reflexions");
-    if (note) {
-      document.getElementById("newnote").value = note;
+// document
+//   .getElementById("exampleModal")
+//   .addEventListener("show.bs.modal", function () {
+//     var note = localStorage.getItem("reflexions");
+//     if (note) {
+//       document.getElementById("newnote").value = note;
+//     }
+//   });
+
+
+// MT
+// Displays the reflections on the journal page
+renderReflections();
+
+// When reflection button clicked the input is save to local storage
+$("#reflection-button").on("click", save);
+
+var now = moment();
+var reflectArr = [];
+
+function save(){
+  // id to updated when reflection modal has been added 
+  var reflections = $("#reflection-input").val();
+  console.log(reflections)
+  var reflectData = {
+    date: now.format("MMMM DD, YYYY - HH:mm"), 
+    title: $(".POTD-Title").text(), 
+    author: $(".POTD-Author").text(), 
+    reflections: reflections
+  }
+
+  console.log(reflectData);
+  console.log(JSON.parse(localStorage.getItem("reflections")));
+
+  // when the local storage is not empty
+  if (JSON.parse(localStorage.getItem("reflections")) != null ) {
+
+    reflectArr = JSON.parse(localStorage.getItem("reflections"));
+    reflectArr.push(reflectData);
+        
+    localStorage.setItem("reflections", JSON.stringify(reflectArr));
+
+  }
+
+  // when the local storage is empty
+  else {
+
+    reflectArr.push(reflectData);
+    localStorage.setItem("reflections", JSON.stringify(reflectArr));
+  }
+
+}
+
+// Displays the reflections on the journal page in a card format
+function renderReflections() {
+
+    var reflectArr = JSON.parse(localStorage.getItem("reflections"));
+
+    if (reflectArr !== null) {
+
+      for (var i = 0; i < reflectArr.length; i++) {
+          console.log(reflectArr[i])
+
+          var entry = reflectArr[i];
+          console.log(entry);
+
+          $(".journal-entries").append(
+            `<div class="card mb-3" style="margin: 20px; src='../assets/Images/paper-bg.jpg">
+              <p id="entry-date" style="padding:10px 10px 5px 10px;font-family:'Kallam';font-size:17px;margin:0px;"><b>${entry.date}</b></p>
+              <h5 style="padding:5px 10px;font-family:'Kallam';font-size:17px;margin:0px">${entry.author} - <i>${entry.title}</i>
+              </h5>
+              <p style="padding: 5px 10px 10px ;font-family:'Kallam';font-size:17px;margin:0px">${entry.reflections}</p>
+              </div>
+            </div>`)
+
+      }
     }
-  });
+}
