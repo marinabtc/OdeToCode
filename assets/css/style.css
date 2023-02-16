@@ -1,19 +1,16 @@
 
 :root{
-    --ochre: rgb(224, 206, 100);
+
+    --ochre: rgb(226 225 219);
     --dark-ochre: rgb(202, 182, 71);
-    
     --white: rgb(249, 249, 249);
-    --teal: rgb(52, 165, 165);
+    --teal: rgb(136, 159, 110);
     --dark-teal: rgb(52, 136, 136);
-    --light-teal: rgb(141, 149, 165);
-    /* --teal: rgba(99, 68, 0, 1); */
-    --forest-green: rgb(4, 92, 55);
-    --forest-green: rgb(95, 74, 29);
-    --forest-green-light: rgb(161, 134, 44);
-    --lime: rgb(164, 202, 113);
+    --light-teal: rgb(169 153 151);
     --ink-pen: rgb(10, 9, 10);
     --ink-white: rgb(99, 98, 98);
+
+
 }
 
 
@@ -25,7 +22,7 @@
         margin-left: 0 !important;
     } */
     .POTD-Title, .POTD-Author {
-        color: var(--dark-teal);
+        color: var(--teal);
         text-shadow: 0px 1px 1px rgba(46, 46, 46, 0.747);
         font-size: 1.4em;
         font-family: 'Dancing Script', cursive;
@@ -37,14 +34,14 @@
         color: var(--ink-pen);
         /* color: var(--ink-white); */
         /* text-shadow: 0px 1px 1px rgba(145, 145, 145, 0.486); */
-        font-size: 1.2em;
+        font-size: 0.9em;
         /* text-align: left; */
-        font-family: 'Dancing Script', cursive;
-        line-height: 7vw !important;
+        font-family: 'Kalam', cursive;
+        line-height: 4vw !important;
     }
 
     .POTD-Intro, .journal-Intro, .search-result-title {
-        color: var(--dark-ochre);
+        color: var(--ochre);
         font-size: 1.75em !important;
         text-decoration-line: underline;
         border: 0;
@@ -66,15 +63,9 @@
 }
 
 @media screen and (min-width: 390px) and (max-width: 768px) {
-    /* .POTD-Title, .POTD-Author, .Poem-Text {
-        margin-top: 0 !important;
-        margin-right: 0 !important;
-        margin-bottom: 0 !important;
-        margin-left: 0 !important;
-    } */
 
     .POTD-Title, .POTD-Author {
-        color: var(--dark-teal);
+        color: var(--teal);
         text-shadow: 0px 1px 1px rgba(46, 46, 46, 0.747);
         font-size: 1.5em;
         font-family: 'Dancing Script', cursive;
@@ -87,24 +78,18 @@
         color: var(--ink-pen);
         /* color: var(--ink-white); */
         text-shadow: 0px 1px 1px rgba(145, 145, 145, 0.486);
-        font-size: 1.4em;
-        font-family: 'Dancing Script', cursive;
-        line-height: 1.1 !important;
+        font-size: 1em;
+        font-family: 'Kalam', cursive;
+        line-height: 0.9 !important;
     }
 
     .POTD-Intro, .journal-Intro, .search-result-title {
-        color: var(--dark-ochre);
+        color: var(--ochre);
         font-size: 2.2em !important;
         text-decoration-line: underline;
         border: 0;
     }
 
-    /* .poem-text-margins {
-        margin-top: 6.8em !important;
-        margin-bottom: 7.5em !important;
-        margin-right: 2.5em !important;
-        margin-left: 2.5em !important;
-    } */
     .poem-text-margins {
         margin-top: 15vw !important;
         margin-bottom: 16vw !important;
@@ -114,15 +99,9 @@
 }
 
 @media screen and (min-width: 769px) and (max-width: 1449px) {
-    /* .POTD-Title, .POTD-Author, .Poem-Text {
-        margin-top: 0 !important;
-        margin-right: 0 !important;
-        margin-bottom: 0 !important;
-        margin-left: 0 !important;
-    } */
 
     .POTD-Title, .POTD-Author {
-        color: var(--dark-teal);
+        color: var(--teal);
         text-shadow: 0px 1px 1px rgba(46, 46, 46, 0.747);
         font-size: 1.75em;
         font-family: 'Dancing Script', cursive;
@@ -134,25 +113,18 @@
         color: var(--ink-pen);
         /* color: var(--ink-white); */
         text-shadow: 0px 1px 1px rgba(145, 145, 145, 0.486);
-        font-size: 1.5em;
+        font-size: 1.2em;
         /* text-align: left !important; */
-        font-family: 'Dancing Script', cursive;
-        line-height: 1.5 !important;
+        font-family: 'Kalam', cursive;
+        line-height: 0.9 !important;
     }
 
     .POTD-Intro, .journal-Intro, .search-result-title {
-        color: var(--dark-ochre);
+        color: var(--ochre);
         font-size: 2.2em !important;
         text-decoration-line: underline;
         border: 0;
     }
-
-    /* .poem-text-margins {
-        margin-top: 7.5em !important;
-        margin-bottom: 8em !important;
-        margin-right: 3em !important;
-        margin-left: 3em !important;
-    } */
 
     .poem-text-margins {
         margin-top: 15vw !important;
@@ -163,16 +135,9 @@
 }
 
 @media screen and (min-width: 1450px) {
-    /* .POTD-Title, .POTD-Author, .Poem-Text {
-        margin-top: 0 !important;
-        margin-right: 0 !important;
-        margin-bottom: 0 !important;
-        margin-left: 0 !important;
-    } */
-
 .POTD-Title, .POTD-Author {
-    color: var(--dark-teal);
-    text-shadow: 0px 2px 2px rgb(0, 0, 0);
+    color: var(--teal);
+    text-shadow: 0px 1px 1px rgba(46, 46, 46, 0.747);
     font-size: 1.9vw;
     font-family: 'Dancing Script', cursive;
     line-height: 1.2 !important;
@@ -183,10 +148,10 @@
     color: var(--ink-pen);
     /* color: var(--ink-white); */
     text-shadow: 0px 1px 1px rgba(145, 145, 145, 0.486);
-    font-size: 1.6vw;
+    font-size: 1.2em;
     text-align: left !important;
-    font-family: 'Dancing Script', cursive;
-    line-height: 1.5 !important;
+    font-family: 'Kalam', cursive;
+    line-height: 1 !important;
 }
 
 .POTD-Intro, .journal-Intro, .search-result-title {
@@ -195,13 +160,6 @@
     text-decoration-line: underline;
     border: 0;
 }
-
-/* .poem-text-margins {
-    margin-top: 8em !important;
-    margin-bottom: 8.5em !important;
-    margin-right: 3.5em !important;
-    margin-left: 3.5em !important;
-} */
 
 .poem-text-margins {
     margin-top: 8.5vw !important;
@@ -234,6 +192,14 @@ body {
     transition: 0.5s !important;
     /* change the weight ofthe links to bold */
     font-weight: 600 !important;
+}
+
+/* change the font of .nav-item */
+.nav-item {
+    /* font-family: 'Kalam', cursive !important;
+    font-size: 1.2em !important; */
+    /* transition: 0.5s !important;
+    text-decoration: none !important; */
 }
 
 .nav-item a:hover {
@@ -269,7 +235,7 @@ body {
 
 
 .jumbotron{
-    background: url("../Images/background-jumbotron-c.png") no-repeat;
+    background: url("../Images/background-jumbotron-c.png") center no-repeat;
     background-size: cover;
     padding: 25px !important;
 }
@@ -287,6 +253,8 @@ body {
 /* align the POTD-Intro to centre and give the text a shadow */
 .POTD-Intro, .journal-Intro, .search-result-title {
     font-family: 'Satisfy', cursive;
+    color: var(--ochre);
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.486);
 }
 .POTD-Intro, .POTD-Title, .POTD-Author, .journal-Intro, .search-result-title {
     text-align: center;
@@ -294,7 +262,7 @@ body {
 }
 
 .POTD-Intro, .journal-Intro, .search-result-title {
-    color: var(--dark-ochre);
+    color: var(--ochre);
     font-size: 2.5em;
     /* font-size: 2.25vw; */
     text-decoration-line: underline;
@@ -415,3 +383,29 @@ background: #555;
     display: flex;
     justify-content: center;
   }
+
+  /* adding code for the reflection cards */
+  .reflection-card {
+    padding:10px 10px 5px 10px;
+}
+.entry-date {
+    color: var(--ink-pen);
+    font-size: 1.2em;
+    font-family: 'Kalam', cursive !important;
+    margin: 0;
+}
+.reflection-card {
+    margin: 20px;
+}
+h4 {
+    font-size: 1.2em;
+    color: var(--teal);
+    font-family: 'Kalam', cursive !important;
+}
+.reflection-text {
+    color: var(--ink-pen);
+    font-size: 1em;
+    font-family: 'Kalam', cursive !important;
+    padding: 5px 10px 10px;
+    margin: 0;
+}

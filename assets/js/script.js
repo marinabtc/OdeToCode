@@ -323,24 +323,33 @@ function renderReflections() {
       var entry = reflectArr[i];
       console.log(entry);
 
-      $(".journal-entries").append(
-        `<div class="card mb-3" style="margin: 20px; src='../assets/Images/paper-bg.jpg">
-              <p id="entry-date" style="padding:10px 10px 5px 10px;font-family:'Kallam';font-size:17px;margin:0px;"><b>${entry.date}</b></p>
-              <h5 style="padding:5px 10px;font-family:'Kallam';font-size:17px;margin:0px">${entry.author} - <i>${entry.title}</i>
-              </h5>
-              <p style="padding: 5px 10px 10px ;font-family:'Kallam';font-size:17px;margin:0px">${entry.reflections}</p>
-              </div>
-            </div>`
-      );
+          // $(".journal-entries").append(
+          //   `<div class="card mb-3" style="margin: 20px; src='../assets/Images/paper-bg.jpg">
+          //     <p id="entry-date" style="padding:10px 10px 5px 10px;font-family:'Kallam';font-size:17px;margin:0px;"><b>${entry.date}</b></p>
+          //     <h5 style="padding:5px 10px;font-family:'Kallam';font-size:17px;margin:0px">${entry.author} - <i>${entry.title}</i>
+          //     </h5>
+          //     <p style="padding: 5px 10px 10px ;font-family:'Kallam';font-size:17px;margin:0px">${entry.reflections}</p>
+          //     </div>
+          //   </div>`)
+
+          // shahid changing js to help format the cards throucgh css
+            $(".journal-entries").append(
+              `<div class="card reflection-card">
+                <div id="entry-date" class="entry-date"><b>${entry.date}</b></div>
+                <h4>${entry.author} - <i>${entry.title}</i>
+                </h4>
+                <div class="reflection-text">${entry.reflections}</div>`)
+
+      }
     }
-  }
 }
 
 // Shahid adding code that displays the number of reflections in the card at bottom
 function getJournalNumber() {
   if (localStorage.reflections) {
-    $(".journalCount").after(`${JSON.parse(localStorage.reflections).length}`);
-  } else {
+    $(".journalCount").after(`<b>${JSON.parse(localStorage.reflections).length}</b>`);
+  }
+  else {
     $(".journalCount").after(`0`);
   }
 }
