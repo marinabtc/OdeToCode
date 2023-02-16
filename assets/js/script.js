@@ -207,28 +207,36 @@ function renderPoem(response) {
   }
 }
 
-var getRandomPoetListQuery = `https://poetrydb.org/random/3/author`;
+// increased the limit from 3 to 5 so we have more authors to chose from
+var getRandomPoetListQuery = `https://poetrydb.org/random/5/author`;
 
 function getRandomPoets() {
   $.ajax({
     url: getRandomPoetListQuery,
     method: "GET",
   }).then(function (response) {
+    // console.log("full response", response);
+
     // to save our non-repeat author list
     let uniqueAuthorList = [];
 
-    // check each of the poets' names in response
-    response.forEach((poetName) => {
-      // if the poetName is not yet included in the uniqueAuthorList, we then add it
-      if (!uniqueAuthorList.includes(poetName)) {
-        uniqueAuthorList.push(poetName);
+    // we need to iterate through the authors in response
+    for (let i in response) {
+      // if the author is not yet present in uniqueAuthorList and the array has not yet reached out limit of 3 authors, add the current author into uniqueAuthorList
+      if (
+        !uniqueAuthorList.includes(response[i].author) &&
+        uniqueAuthorList.length < 3
+      ) {
+        uniqueAuthorList.push(response[i].author);
       }
-    });
+    }
+
+    // console.log("list", uniqueAuthorList);
 
     // we then use the uniqueAuthorList to feed our random poet buttons
-    var poet1 = $(".Poet-Sug-Btn-1").text(uniqueAuthorList[0].author);
-    var poet2 = $(".Poet-Sug-Btn-2").text(uniqueAuthorList[1].author);
-    var poet3 = $(".Poet-Sug-Btn-3").text(uniqueAuthorList[2].author);
+    var poet1 = $(".Poet-Sug-Btn-1").text(uniqueAuthorList[0]);
+    var poet2 = $(".Poet-Sug-Btn-2").text(uniqueAuthorList[1]);
+    var poet3 = $(".Poet-Sug-Btn-3").text(uniqueAuthorList[2]);
 
     for (let i = 0; i < 4; i++) {
       $(`.Poet-Sug-Btn-${i}`).on("click", function () {
@@ -265,7 +273,6 @@ function getRandomPoets() {
 //     }
 //   });
 
-
 // MT
 // Displays the reflections on the journal page
 renderReflections();
@@ -276,72 +283,64 @@ $("#reflection-button").on("click", save);
 var now = moment();
 var reflectArr = [];
 
-function save(){
-  // id to updated when reflection modal has been added 
+function save() {
+  // id to updated when reflection modal has been added
   var reflections = $("#reflection-input").val();
-  console.log(reflections)
+  console.log(reflections);
   var reflectData = {
-    date: now.format("MMMM DD, YYYY - HH:mm"), 
-    title: $(".POTD-Title").text(), 
-    author: $(".POTD-Author").text(), 
-    reflections: reflections
-  }
+    date: now.format("MMMM DD, YYYY - HH:mm"),
+    title: $(".POTD-Title").text(),
+    author: $(".POTD-Author").text(),
+    reflections: reflections,
+  };
 
   console.log(reflectData);
   console.log(JSON.parse(localStorage.getItem("reflections")));
 
   // when the local storage is not empty
-  if (JSON.parse(localStorage.getItem("reflections")) != null ) {
-
+  if (JSON.parse(localStorage.getItem("reflections")) != null) {
     reflectArr = JSON.parse(localStorage.getItem("reflections"));
     reflectArr.push(reflectData);
-        
-    localStorage.setItem("reflections", JSON.stringify(reflectArr));
 
+    localStorage.setItem("reflections", JSON.stringify(reflectArr));
   }
 
   // when the local storage is empty
   else {
-
     reflectArr.push(reflectData);
     localStorage.setItem("reflections", JSON.stringify(reflectArr));
   }
-
 }
 
 // Displays the reflections on the journal page in a card format
 function renderReflections() {
+  var reflectArr = JSON.parse(localStorage.getItem("reflections"));
 
-    var reflectArr = JSON.parse(localStorage.getItem("reflections"));
+  if (reflectArr !== null) {
+    for (var i = 0; i < reflectArr.length; i++) {
+      console.log(reflectArr[i]);
 
-    if (reflectArr !== null) {
+      var entry = reflectArr[i];
+      console.log(entry);
 
-      for (var i = 0; i < reflectArr.length; i++) {
-          console.log(reflectArr[i])
-
-          var entry = reflectArr[i];
-          console.log(entry);
-
-          $(".journal-entries").append(
-            `<div class="card mb-3" style="margin: 20px; src='../assets/Images/paper-bg.jpg">
+      $(".journal-entries").append(
+        `<div class="card mb-3" style="margin: 20px; src='../assets/Images/paper-bg.jpg">
               <p id="entry-date" style="padding:10px 10px 5px 10px;font-family:'Kallam';font-size:17px;margin:0px;"><b>${entry.date}</b></p>
               <h5 style="padding:5px 10px;font-family:'Kallam';font-size:17px;margin:0px">${entry.author} - <i>${entry.title}</i>
               </h5>
               <p style="padding: 5px 10px 10px ;font-family:'Kallam';font-size:17px;margin:0px">${entry.reflections}</p>
               </div>
-            </div>`)
-
-      }
+            </div>`
+      );
     }
+  }
 }
-
 
 // Shahid adding code that displays the number of reflections in the card at bottom
 function getJournalNumber() {
   if (localStorage.reflections) {
     $(".journalCount").after(`${JSON.parse(localStorage.reflections).length}`);
-  }
-  else {
+  } else {
     $(".journalCount").after(`0`);
   }
 }
