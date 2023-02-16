@@ -281,9 +281,6 @@ var reflectArr = [];
 
 function save() {
 
-  // resets the input in the reflection modal
-  $("#reflection-input").val("");
-
   // id to updated when reflection modal has been added
   var reflections = $("#reflection-input").val();
   console.log(reflections);
@@ -310,6 +307,10 @@ function save() {
     reflectArr.push(reflectData);
     localStorage.setItem("reflections", JSON.stringify(reflectArr));
   }
+
+    // resets the input in the reflection modal
+    $("#reflection-input").val("");
+
 }
 
 // Displays the reflections on the journal page in a card format
