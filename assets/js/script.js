@@ -214,9 +214,21 @@ function getRandomPoets() {
     url: getRandomPoetListQuery,
     method: "GET",
   }).then(function (response) {
-    var poet1 = $(".Poet-Sug-Btn-1").text(response[0].author);
-    var poet2 = $(".Poet-Sug-Btn-2").text(response[1].author);
-    var poet3 = $(".Poet-Sug-Btn-3").text(response[2].author);
+    // to save our non-repeat author list
+    let uniqueAuthorList = [];
+
+    // check each of the poets' names in response
+    response.forEach((poetName) => {
+      // if the poetName is not yet included in the uniqueAuthorList, we then add it
+      if (!uniqueAuthorList.includes(poetName)) {
+        uniqueAuthorList.push(poetName);
+      }
+    });
+
+    // we then use the uniqueAuthorList to feed our random poet buttons
+    var poet1 = $(".Poet-Sug-Btn-1").text(uniqueAuthorList[0].author);
+    var poet2 = $(".Poet-Sug-Btn-2").text(uniqueAuthorList[1].author);
+    var poet3 = $(".Poet-Sug-Btn-3").text(uniqueAuthorList[2].author);
 
     for (let i = 0; i < 4; i++) {
       $(`.Poet-Sug-Btn-${i}`).on("click", function () {
@@ -234,20 +246,20 @@ function getRandomPoets() {
     }
   });
 }
+
 // modal local storage
+document
+  .querySelector(".modal-footer button")
+  .addEventListener("click", function () {
+    var note = document.getElementById("newnote").value;
+    localStorage.setItem("reflexions", note);
+  });
 
-document.querySelector('.modal-footer button').addEventListener('click', function() {
-  var note = document.getElementById('newnote').value;
-  localStorage.setItem('reflexions', note);
-});
-
-document.getElementById('exampleModal').addEventListener('show.bs.modal', function() {
-  var note = localStorage.getItem('reflexions');
-  if (note) {
-    document.getElementById('newnote').value = note;
-  }
-});
-
-
-
-
+document
+  .getElementById("exampleModal")
+  .addEventListener("show.bs.modal", function () {
+    var note = localStorage.getItem("reflexions");
+    if (note) {
+      document.getElementById("newnote").value = note;
+    }
+  });
