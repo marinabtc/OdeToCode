@@ -55,18 +55,6 @@
 
           <div class="col-md-3 dropdown-search p-1">
             <div class="dropdown">
-              <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                Search by
-              </button> -->
-
-              <!-- Added id to be able to target the specific drop down item -->
-              <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" id="author" href="#">Author</a></li>  
-                <li><a class="dropdown-item" id="title" href="#">Title</a></li> 
-                <li><a class="dropdown-item" id="lines" href="#">Lines</a></li>
-              </ul> -->
-
-              <!-- Added id to be able to target the specific drop down item -->
               <select class="form-select form-select-lg rounded-pill search-by-dropdown"
                 aria-label=".form-select-lg example">
                 <option selected>Search by</option>
@@ -175,10 +163,10 @@
           </div>
           <div class="modal-body">
 <!-- Shahid fixed modal displays button issues and text area - it does save to the app local storage -->
-            <textarea type="text" id="newnote" class="md-textarea form-control" rows="10" name="newnote" placeholder="Write your reflection here..."></textarea>
+            <textarea type="text" id="reflection-input" class="md-textarea form-control" rows="10" name="newnote" placeholder="Write your reflection here..."></textarea>
         </div>
           <div class="modal-footer d-flex justify-content-center">
-            <button type="button" class="btn rounded-pill" data-bs-dismiss="modal">Save & Submit</button>
+            <button type="button" class="btn rounded-pill" id="reflection-button" data-bs-dismiss="modal">Save & Submit</button>
           </div>
         </div>
       </div>

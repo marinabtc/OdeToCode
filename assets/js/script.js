@@ -182,7 +182,7 @@ getRandomPoemOnClick();
 
 // displays poem in the poem card
 function renderPoem(response) {
-  $(".Poem-Text").empty();
+  $(".Poem-Text").remove();
 
   // gets the poem's title
   var poemTitle = response[0].title;
@@ -306,6 +306,8 @@ function save(){
     reflectArr.push(reflectData);
     localStorage.setItem("reflections", JSON.stringify(reflectArr));
   }
+
+  window.open("../journal.html")
 
 }
 
