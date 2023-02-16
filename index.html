@@ -107,7 +107,7 @@
                   <input type="text" class="form-control rounded-pill" id="adv-author" placeholder="Author">
                 </div>
                 <div class="col-md-4">
-                  <input type="text" class="form-control rounded-pill" id="adv-title" placeholder="Title">
+                  <input type="text" class="form-control rounded-pill" id="adv-txtle" placeholder="Title">
                 </div>
                 <div class="col-md-4">
                   <input type="text" class="form-control rounded-pill" id="adv-lines" placeholder="Lines">
@@ -156,9 +156,9 @@
 
     <!-- Button trigger modal -->
     <div class="row justify-content-center my-4">
-      <button type="button" class="align-self-end btn rounded-pill" data-bs-toggle="modal"
+      <button type="button" class="align-self-end btn rounded-pill btn-lg" data-bs-toggle="modal"
         data-bs-target="#exampleModal">
-        Reflection
+        Write Your Reflection
       </button>
     </div>
 
@@ -168,16 +168,17 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Thought!</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+            <h3 class="modal-title modal-text" id="exampleModalLabel">Your Reflection</h3>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
           <div class="modal-body">
-          </div>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="newnote" name="newnote" placeholder="Type your thought here!" />
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn" data-bs-dismiss="modal">Save changes</button>
+<!-- Shahid fixed modal displays button issues and text area - it does save to the app local storage -->
+            <textarea type="text" id="newnote" class="md-textarea form-control" rows="10" name="newnote" placeholder="Write your reflection here..."></textarea>
+        </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button type="button" class="btn rounded-pill" data-bs-dismiss="modal">Save & Submit</button>
           </div>
         </div>
       </div>
@@ -199,12 +200,9 @@
             <p class="card-text">Click one of the random authors below to display a poem of theirs in the card above.
             </p>
             <div class="card-footer">
-              <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-1 card-button my-1 rounded-pill">William
-                Blake</a>
-              <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-2 card-button my-1 rounded-pill">Fatimah
-                Asghar</a>
-              <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-3 card-button my-1 rounded-pill">James
-                Baldwin</a>
+              <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-1 card-button my-1 rounded-pill"></a>
+              <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-2 card-button my-1 rounded-pill"></a>
+              <a href="#" class="align-self-end btn btn-lg Poet-Sug-Btn-3 card-button my-1 rounded-pill"></a>
             </div>
           </div>
         </div>
@@ -214,7 +212,7 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Your Poetry Stats</h5>
-            <p class="card-text">You have reviewed <span>INSERT NUMBER OF REVIEWED POEMS</span> poems so far.</p>
+            <p class="card-text">You have reviewed <span class="journalCount"></span> poems so far.</p>
             <div class="card-footer">
               <a href="./journal.html" class="align-self-end btn btn-lg  rounded-pill card-button">Visit Your
                 Journal</a>
@@ -250,7 +248,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">No search options selected</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -258,7 +256,7 @@
           Please select a search parameter.
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -271,7 +269,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">No results found</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -279,7 +277,7 @@
           Sorry, we couldn't find any poem corresponding to your search term(s).
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -292,7 +290,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Wrong input</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -300,7 +298,7 @@
           Please enter exactly 2 search terms when using the advance search.
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
