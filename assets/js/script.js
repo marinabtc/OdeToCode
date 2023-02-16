@@ -265,7 +265,7 @@ function save(){
   var reflections = $("#reflection-input").val();
   console.log(reflections)
   var reflectData = {
-    date: now.format("MMMM DD, YYYY - hh:mm"), 
+    date: now.format("MMMM DD, YYYY - HH:mm"), 
     title: $(".POTD-Title").text(), 
     author: $(".POTD-Author").text(), 
     reflections: reflections
@@ -307,12 +307,11 @@ function renderReflections() {
           console.log(entry);
 
           $(".journal-entries").append(
-            `<div class="card mb-3" style="margin: 20px;">
-              <div class="card-header"><b>${entry.date}</b></div>
-              <div class="card-body text-primary">
-                <h5 class="card-title">${entry.author} - <i>${entry.title}</i>
-                </h5>
-                <p class="card-text">${entry.reflections}</p>
+            `<div class="card mb-3" style="margin: 20px; src='../assets/Images/paper-bg.jpg">
+              <p id="entry-date" style="padding:10px 10px 5px 10px;font-family:'Kallam';font-size:17px;margin:0px;"><b>${entry.date}</b></p>
+              <h5 style="padding:5px 10px;font-family:'Kallam';font-size:17px;margin:0px">${entry.author} - <i>${entry.title}</i>
+              </h5>
+              <p style="padding: 5px 10px 10px ;font-family:'Kallam';font-size:17px;margin:0px">${entry.reflections}</p>
               </div>
             </div>`)
 
