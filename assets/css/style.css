@@ -37,10 +37,10 @@
         color: var(--ink-pen);
         /* color: var(--ink-white); */
         /* text-shadow: 0px 1px 1px rgba(145, 145, 145, 0.486); */
-        font-size: 1.2em;
+        font-size: 0.9em;
         /* text-align: left; */
-        font-family: 'Dancing Script', cursive;
-        line-height: 7vw !important;
+        font-family: 'Kalam', cursive;
+        line-height: 4vw !important;
     }
 
     .POTD-Intro, .journal-Intro, .search-result-title {
@@ -66,12 +66,6 @@
 }
 
 @media screen and (min-width: 390px) and (max-width: 768px) {
-    /* .POTD-Title, .POTD-Author, .Poem-Text {
-        margin-top: 0 !important;
-        margin-right: 0 !important;
-        margin-bottom: 0 !important;
-        margin-left: 0 !important;
-    } */
 
     .POTD-Title, .POTD-Author {
         color: var(--dark-teal);
@@ -87,9 +81,9 @@
         color: var(--ink-pen);
         /* color: var(--ink-white); */
         text-shadow: 0px 1px 1px rgba(145, 145, 145, 0.486);
-        font-size: 1.4em;
-        font-family: 'Dancing Script', cursive;
-        line-height: 1.1 !important;
+        font-size: 1em;
+        font-family: 'Kalam', cursive;
+        line-height: 0.9 !important;
     }
 
     .POTD-Intro, .journal-Intro, .search-result-title {
@@ -99,12 +93,6 @@
         border: 0;
     }
 
-    /* .poem-text-margins {
-        margin-top: 6.8em !important;
-        margin-bottom: 7.5em !important;
-        margin-right: 2.5em !important;
-        margin-left: 2.5em !important;
-    } */
     .poem-text-margins {
         margin-top: 15vw !important;
         margin-bottom: 16vw !important;
@@ -114,12 +102,6 @@
 }
 
 @media screen and (min-width: 769px) and (max-width: 1449px) {
-    /* .POTD-Title, .POTD-Author, .Poem-Text {
-        margin-top: 0 !important;
-        margin-right: 0 !important;
-        margin-bottom: 0 !important;
-        margin-left: 0 !important;
-    } */
 
     .POTD-Title, .POTD-Author {
         color: var(--dark-teal);
@@ -134,10 +116,10 @@
         color: var(--ink-pen);
         /* color: var(--ink-white); */
         text-shadow: 0px 1px 1px rgba(145, 145, 145, 0.486);
-        font-size: 1.5em;
+        font-size: 1.2em;
         /* text-align: left !important; */
-        font-family: 'Dancing Script', cursive;
-        line-height: 1.5 !important;
+        font-family: 'Kalam', cursive;
+        line-height: 0.9 !important;
     }
 
     .POTD-Intro, .journal-Intro, .search-result-title {
@@ -146,13 +128,6 @@
         text-decoration-line: underline;
         border: 0;
     }
-
-    /* .poem-text-margins {
-        margin-top: 7.5em !important;
-        margin-bottom: 8em !important;
-        margin-right: 3em !important;
-        margin-left: 3em !important;
-    } */
 
     .poem-text-margins {
         margin-top: 15vw !important;
@@ -163,13 +138,6 @@
 }
 
 @media screen and (min-width: 1450px) {
-    /* .POTD-Title, .POTD-Author, .Poem-Text {
-        margin-top: 0 !important;
-        margin-right: 0 !important;
-        margin-bottom: 0 !important;
-        margin-left: 0 !important;
-    } */
-
 .POTD-Title, .POTD-Author {
     color: var(--dark-teal);
     text-shadow: 0px 2px 2px rgb(0, 0, 0);
@@ -183,10 +151,10 @@
     color: var(--ink-pen);
     /* color: var(--ink-white); */
     text-shadow: 0px 1px 1px rgba(145, 145, 145, 0.486);
-    font-size: 1.6vw;
+    font-size: 1.2em;
     text-align: left !important;
-    font-family: 'Dancing Script', cursive;
-    line-height: 1.5 !important;
+    font-family: 'Kalam', cursive;
+    line-height: 1 !important;
 }
 
 .POTD-Intro, .journal-Intro, .search-result-title {
@@ -195,13 +163,6 @@
     text-decoration-line: underline;
     border: 0;
 }
-
-/* .poem-text-margins {
-    margin-top: 8em !important;
-    margin-bottom: 8.5em !important;
-    margin-right: 3.5em !important;
-    margin-left: 3.5em !important;
-} */
 
 .poem-text-margins {
     margin-top: 8.5vw !important;
@@ -415,3 +376,29 @@ background: #555;
     display: flex;
     justify-content: center;
   }
+
+  /* adding code for the reflection cards */
+  .reflection-card {
+    padding:10px 10px 5px 10px;
+}
+.entry-date {
+    color: var(--ink-pen);
+    font-size: 1.2em;
+    font-family: 'Kalam', cursive !important;
+    margin: 0;
+}
+.reflection-card {
+    margin: 20px;
+}
+h4 {
+    font-size: 1.2em;
+    color: var(--dark-teal);
+    font-family: 'Kalam', cursive !important;
+}
+.reflection-text {
+    color: var(--ink-pen);
+    font-size: 1em;
+    font-family: 'Kalam', cursive !important;
+    padding: 5px 10px 10px;
+    margin: 0;
+}
