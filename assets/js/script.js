@@ -274,7 +274,7 @@ function getRandomPoets() {
 renderReflections();
 
 // When reflection button clicked the input is save to local storage
-$("#reflection-button").on("click", save);
+$(".reflection-button").on("click", save);
 
 var now = moment();
 var reflectArr = [];
