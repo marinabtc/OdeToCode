@@ -90,22 +90,18 @@ function getPoem() {
         var poemAuthor = response[0].author;
         console.log("Author: " + poemAuthor);
 
-        // gets the poem's lines
-        var poemLines = response[0].lines;
-
-        console.log("Lines: ");
-
-        // loops through the lines array
-        // for (var i = 0; i < poemLines.length; i++) {
-        //   console.log(poemLines[i]);
-        // }
-
         renderPoem(response);
       } else {
         $("#no-results").modal("show");
       }
     });
   }
+
+  // Behaviour if no input in the main search bar
+  else if (mainInput === "") {
+    return;
+  }
+
   // Advance search
   else {
     // search by author + title
