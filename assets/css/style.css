@@ -23,7 +23,7 @@
         text-shadow: 0px 1px 1px rgba(46, 46, 46, 0.747);
         font-size: 1.5em;
         font-family: 'Dancing Script', cursive;
-        line-height: 0.7 !important;
+        line-height: 7vw !important;
     }
     
     /* style .Poem-Text so it is dark grey and script  */
@@ -32,9 +32,9 @@
         /* color: var(--ink-white); */
         text-shadow: 0px 1px 1px rgba(145, 145, 145, 0.486);
         font-size: 1.15em;
-        text-align: left;
+        /* text-align: left; */
         font-family: 'Dancing Script', cursive;
-        line-height: 0.9vw !important;
+        line-height: 1.7vw !important;
     }
 
     .POTD-Intro, .journal-Intro, .search-result-title {
@@ -67,7 +67,7 @@
         /* color: var(--ink-white); */
         text-shadow: 0px 1px 1px rgba(145, 145, 145, 0.486);
         font-size: 1.3em;
-        text-align: left;
+        /* text-align: left; */
         font-family: 'Dancing Script', cursive;
         line-height: 1.4vw !important;
     }
@@ -102,7 +102,7 @@
         /* color: var(--ink-white); */
         text-shadow: 0px 1px 1px rgba(145, 145, 145, 0.486);
         font-size: 1.5em;
-        text-align: left;
+        /* text-align: left !important; */
         font-family: 'Dancing Script', cursive;
         line-height: 0.6 !important;
     }
@@ -137,7 +137,7 @@
     /* color: var(--ink-white); */
     text-shadow: 0px 1px 1px rgba(145, 145, 145, 0.486);
     font-size: 1.6vw;
-    text-align: left;
+    text-align: left !important;
     font-family: 'Dancing Script', cursive;
     line-height: 0.7 !important;
 }
