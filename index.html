@@ -156,9 +156,9 @@
 
     <!-- Button trigger modal -->
     <div class="row justify-content-center my-4">
-      <button type="button" class="align-self-end btn rounded-pill" data-bs-toggle="modal"
+      <button type="button" class="align-self-end btn rounded-pill btn-lg" data-bs-toggle="modal"
         data-bs-target="#exampleModal">
-        Reflection
+        Write Your Reflection
       </button>
     </div>
 
@@ -168,16 +168,17 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Thought!</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+            <h3 class="modal-title modal-text" id="exampleModalLabel">Your Reflection</h3>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
           <div class="modal-body">
-          </div>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="newnote" name="newnote" placeholder="Type your thought here!" />
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn" data-bs-dismiss="modal">Save changes</button>
+<!-- Shahid fixed modal displays button issues and text area - it does save to the app local storage -->
+            <textarea type="text" id="newnote" class="md-textarea form-control" rows="10" name="newnote" placeholder="Write your reflection here..."></textarea>
+        </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button type="button" class="btn rounded-pill" data-bs-dismiss="modal">Save & Submit</button>
           </div>
         </div>
       </div>
@@ -211,7 +212,7 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Your Poetry Stats</h5>
-            <p class="card-text">You have reviewed <span>INSERT NUMBER OF REVIEWED POEMS</span> poems so far.</p>
+            <p class="card-text">You have reviewed <span class="journalCount"></span> poems so far.</p>
             <div class="card-footer">
               <a href="./journal.html" class="align-self-end btn btn-lg  rounded-pill card-button">Visit Your
                 Journal</a>
