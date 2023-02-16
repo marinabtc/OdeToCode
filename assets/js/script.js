@@ -150,7 +150,7 @@ function getPoem() {
   // resets the search boxes
   $("#main-input").val("");
   $("#adv-author").val("");
-  $("#adv-title").val("");
+  $("#adv-txtle").val("");
   $("#adv-lines").val("");
 }
 
@@ -262,4 +262,22 @@ document
     if (note) {
       document.getElementById("newnote").value = note;
     }
+    $("#newnote").val(""); //shahid trying to clear the modal
   });
+
+  // Shahid testing journal number function for card below 
+  function getJournalNumber() {
+    var tempJournalNum = JSON.parse(localStorage.getItem("reflexions"));
+    var numObjects = Object.keys(tempJournalNum).length;
+    $(".journalCount").after(`${numObjects}`);
+  }
+  
+  getJournalNumber();
+
+  // function getJournalNumber() {
+  //   var tempJournalNum = localStorage.getItem("reflexions");
+  //   var numObjects = Object.keys(tempJournalNum).length;
+  //   $(".journalCount").after(`${numObjects}`);
+  // }
+  
+  // getJournalNumber();
