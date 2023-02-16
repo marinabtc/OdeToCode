@@ -33,7 +33,7 @@ function getPoem() {
 
   // Grabs the values of the advance search
   var advAuthor = $("#adv-author").val().trim();
-  var advTitle = $("#adv-title").val().trim();
+  var advTitle = $("#adv-txtle").val().trim();
   var advLines = $("#adv-lines").val().trim();
 
   console.log("INPUT is: " + mainInput);
