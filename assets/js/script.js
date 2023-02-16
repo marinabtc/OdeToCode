@@ -280,6 +280,10 @@ var now = moment();
 var reflectArr = [];
 
 function save() {
+
+  // resets the input in the reflection modal
+  $("#reflection-input").val("");
+
   // id to updated when reflection modal has been added
   var reflections = $("#reflection-input").val();
   console.log(reflections);
