@@ -150,7 +150,7 @@ function getPoem() {
   // resets the search boxes
   $("#main-input").val("");
   $("#adv-author").val("");
-  $("#adv-title").val("");
+  $("#adv-txtle").val(""); // shahid editting id to work on browser
   $("#adv-lines").val("");
 }
 
@@ -334,3 +334,15 @@ function renderReflections() {
       }
     }
 }
+
+
+// Shahid adding code that displays the number of reflections in the card at bottom
+function getJournalNumber() {
+  if (localStorage.reflections) {
+    $(".journalCount").after(`${JSON.parse(localStorage.reflections).length}`);
+  }
+  else {
+    $(".journalCount").after(`0`);
+  }
+}
+getJournalNumber();
