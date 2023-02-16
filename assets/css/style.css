@@ -356,3 +356,9 @@ border-radius: 10px;
 background: #555; 
 }
 
+/* footer centred*/
+.footer-container {
+    display: flex;
+    justify-content: center;
+  }
+  
