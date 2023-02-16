@@ -307,8 +307,6 @@ function save(){
     localStorage.setItem("reflections", JSON.stringify(reflectArr));
   }
 
-  window.open("../journal.html")
-
 }
 
 // Displays the reflections on the journal page in a card format
