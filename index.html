@@ -142,8 +142,7 @@
         <div class="card-img-overlay overflow-auto poem-text-margins">
           <h5 class="POTD POTD-Title  justify-content-center"></h5>
           <h5 class="POTD POTD-Author  justify-content-center"></h5>
-          <!-- <p class="Poem Poem-Text">This is a wider card with supporting text below as a natural lead-in to additional
-            content. This content is a little bit longer.</p> -->
+
         </div>
       </div>
     </div>
@@ -175,7 +174,8 @@
             <textarea type="text" id="reflection-input" class="md-textarea form-control" rows="10" name="newnote" placeholder="Write your reflection here..."></textarea>
         </div>
           <div class="modal-footer d-flex justify-content-center">
-            <button type="button" class="btn rounded-pill" id="reflection-button" data-bs-dismiss="modal">Save & Submit</button>
+            <button type="button" class="btn rounded-pill reflection-button" data-bs-dismiss="modal" id="saved">Save & Submit</button>
+            <button type="button" class="btn rounded-pill reflection-button" data-bs-dismiss="modal" onclick="document.location='journal.html'">Save & See my journal</button>
           </div>
         </div>
       </div>
@@ -209,7 +209,9 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Your Poetry Stats</h5>
+
             <p class="card-text">You have reviewed <span class="journalCount"></span> poem(s) so far!</p>
+
             <div>
               <a href="./journal.html" class="align-self-end btn btn-lg  rounded-pill card-button">Visit Your
                 Journal</a>
@@ -292,7 +294,7 @@
           </button>
         </div>
         <div class="modal-body">
-          Please enter exactly 2 search terms when using the advance search.
+          Please input 1 search term when using the basic search or exactly 2 search terms when using the advance search.
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-lg rounded-pill card-button" data-bs-dismiss="modal">Close</button>
@@ -329,6 +331,33 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-lg rounded-pill card-button" data-bs-dismiss="modal">Close</button>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MT addind toast for reflection modal -->
+  <div class="toast right" id="my-toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <strong class="mr-auto">Reflection saved</strong>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      Well done! One more reflection saved to your journal. 
+    </div>
+  </div>
+
+  <div class="position-fixed bottom-0 right-0 p-3" style="z-index: 5; right: 0; bottom: 0;">
+    <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
+      <div class="toast-header">
+        <strong class="mr-auto">Reflection saved</strong>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="toast-body">
+        Well done! One more reflection saved to your journal. 
       </div>
     </div>
   </div>
