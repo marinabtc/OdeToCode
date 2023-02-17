@@ -46,8 +46,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-
-        <a class="nav-item nav-link active" href="./index.html">About Us <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" id="aboutUsButton" data-bs-toggle="modal" data-bs-target="#aboutUsModal">About Us <span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link" href="./journal.html">My Poetry Journal</a>
       </div>
     </div>
@@ -89,7 +88,8 @@
           </div>
         </div>
 
-        <div class="mt-3 advanced-w-filters">
+        <!-- Centering adv search button on all media views -->
+        <div class="mt-3 advanced-w-filters text-center"> 
           <button data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
             aria-controls="collapseExample" class="advanced adv-search btn rounded-pill search-bar-button">
             Advanced Search With Filters <i class="fa fa-angle-down"></i></button>
@@ -169,6 +169,7 @@
             </button>
           </div>
           <div class="modal-body">
+            
 <!-- Shahid fixed modal displays button issues and text area - it does save to the app local storage -->
             <textarea type="text" id="reflection-input" class="md-textarea form-control" rows="10" name="newnote" placeholder="Write your reflection here..."></textarea>
         </div>
@@ -208,7 +209,9 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Your Poetry Stats</h5>
-            <p class="card-text">You have reviewed <b><span class="journalCount"></span></b> poems so far.</p> <!-- MT - added bold element -->
+
+            <p class="card-text">You have reviewed <span class="journalCount"></span> poem(s) so far!</p>
+
             <div>
               <a href="./journal.html" class="align-self-end btn btn-lg  rounded-pill card-button">Visit Your
                 Journal</a>
@@ -252,7 +255,7 @@
           Please select a search parameter.
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-lg rounded-pill card-button" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -273,7 +276,7 @@
           Sorry, we couldn't find any poem corresponding to your search term(s).
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-lg rounded-pill card-button" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -294,7 +297,39 @@
           Please input 1 search term when using the basic search or exactly 2 search terms when using the advance search.
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-lg rounded-pill card-button" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <!-- SK adding modal to pop up when about us link is clicked -->
+  <!-- MT Adding modal to alert when no search option selected -->
+  <!-- Modal -->
+  <div class="modal fade" id="aboutUsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">A Limerick About Us:</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <pre class="about-us-text modal-body">
+          There once were some coders so keen,
+          Who made a poem app - a dream!
+          You can read and reflect,
+          On poems that you select,
+          To make your poetry skills - gleam!
+
+          You may search basic or advanced,
+          for results exceedingly enhanced.
+          Then, once retrieved and read,
+          you'll note thoughts in your head,
+          Saving them in a journal at last!
+        </pre>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg rounded-pill card-button" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -331,7 +366,7 @@
 
     <div class="footer-container">
       <footer>
-        &copy; Coded by <a href="https://github.com/marinabtc/OdeToCode">OdetoCode</a>
+        <span class="copyright">&copy; </span><span class="odetocode-footer">Coded by <a href="https://github.com/marinabtc/OdeToCode">OdetoCode</span></a>
       </footer>
     </div>
   

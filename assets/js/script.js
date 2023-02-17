@@ -275,13 +275,11 @@ var now = moment();
 var reflectArr = [];
 
 function save(event) {
-  console.log(event.target.id==="saved")
+  console.log(event.target.id === "saved");
 
   if (event.target.id === "saved") {
-
-    $('#liveToast').toast({animation: true, delay: 2000, autohide: true});
-    $('#liveToast').toast("show");
-
+    $("#liveToast").toast({ animation: true, delay: 2000, autohide: true });
+    $("#liveToast").toast("show");
   }
 
   // id to updated when reflection modal has been added
@@ -314,10 +312,8 @@ function save(event) {
   // resets the input in the reflection modal
   $("#reflection-input").val("");
 
-    // update journal count
-    getJournalNumber();
-
-
+  // update journal count
+  getJournalNumber();
 }
 
 // Displays the reflections on the journal page in a card format
@@ -331,25 +327,25 @@ function renderReflections() {
       var entry = reflectArr[i];
       console.log(entry);
 
-          // $(".journal-entries").append(
-          //   `<div class="card mb-3" style="margin: 20px; src='../assets/Images/paper-bg.jpg">
-          //     <p id="entry-date" style="padding:10px 10px 5px 10px;font-family:'Kallam';font-size:17px;margin:0px;"><b>${entry.date}</b></p>
-          //     <h5 style="padding:5px 10px;font-family:'Kallam';font-size:17px;margin:0px">${entry.author} - <i>${entry.title}</i>
-          //     </h5>
-          //     <p style="padding: 5px 10px 10px ;font-family:'Kallam';font-size:17px;margin:0px">${entry.reflections}</p>
-          //     </div>
-          //   </div>`)
+      // $(".journal-entries").append(
+      //   `<div class="card mb-3" style="margin: 20px; src='../assets/Images/paper-bg.jpg">
+      //     <p id="entry-date" style="padding:10px 10px 5px 10px;font-family:'Kallam';font-size:17px;margin:0px;"><b>${entry.date}</b></p>
+      //     <h5 style="padding:5px 10px;font-family:'Kallam';font-size:17px;margin:0px">${entry.author} - <i>${entry.title}</i>
+      //     </h5>
+      //     <p style="padding: 5px 10px 10px ;font-family:'Kallam';font-size:17px;margin:0px">${entry.reflections}</p>
+      //     </div>
+      //   </div>`)
 
-          // shahid changing js to help format the cards throucgh css
-            $(".journal-entries").append(
-              `<div class="card reflection-card">
+      // shahid changing js to help format the cards throucgh css
+      $(".journal-entries").append(
+        `<div class="card reflection-card">
                 <div id="entry-date" class="entry-date"><b>${entry.date}</b></div>
                 <h4>${entry.author} - <i>${entry.title}</i>
                 </h4>
-                <div class="reflection-text">${entry.reflections}</div>`)
-
-      }
+                <div class="reflection-text">${entry.reflections}</div>`
+      );
     }
+  }
 }
 
 // Shahid adding code that displays the number of reflections in the card at bottom
@@ -365,11 +361,19 @@ function renderReflections() {
 // MT proposition for number function
 function getJournalNumber() {
   if (localStorage.reflections) {
+    // $(".journalCount").after(`<b class="journalCountText">${JSON.parse(localStorage.reflections).length}</b>`);
     $(".journalCount").text(JSON.parse(localStorage.reflections).length);
-  }
-  else {
+  } else {
     $(".journalCount").text(`0`);
   }
 }
 
 getJournalNumber();
+
+// shahid adding js to open modalpopup when about us is clicked
+$("#aboutUsButton").on("click", aboutUsModalPopUp);
+
+function aboutUsModalPopUp() {
+  $("#aboutUsModal").modal("show");
+  return;
+}

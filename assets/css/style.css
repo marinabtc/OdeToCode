@@ -23,10 +23,10 @@
     } */
     .POTD-Title, .POTD-Author {
         color: var(--teal);
-        text-shadow: 0px 1px 1px rgba(46, 46, 46, 0.747);
-        font-size: 1.4em;
+        text-shadow: 0px 1px 1px rgba(27, 27, 27, 0.822) !important;
+        font-size: 1.2em;
         font-family: 'Dancing Script', cursive;
-        line-height: 9vw !important;
+        line-height: 8vw !important;
     }
     
     /* style .Poem-Text so it is dark grey and script  */
@@ -66,7 +66,7 @@
 
     .POTD-Title, .POTD-Author {
         color: var(--teal);
-        text-shadow: 0px 1px 1px rgba(46, 46, 46, 0.747);
+        text-shadow: 0px 1px 1px rgba(27, 27, 27, 0.822) !important;
         font-size: 1.5em;
         font-family: 'Dancing Script', cursive;
         /* line-height: 1 !important; */
@@ -102,7 +102,7 @@
 
     .POTD-Title, .POTD-Author {
         color: var(--teal);
-        text-shadow: 0px 1px 1px rgba(46, 46, 46, 0.747);
+        text-shadow: 0px 1px 1px rgba(27, 27, 27, 0.822) !important;
         font-size: 1.75em;
         font-family: 'Dancing Script', cursive;
         line-height: 1.3 !important;
@@ -137,7 +137,7 @@
 @media screen and (min-width: 1450px) {
 .POTD-Title, .POTD-Author {
     color: var(--teal);
-    text-shadow: 0px 1px 1px rgba(46, 46, 46, 0.747);
+    text-shadow: 0px 1px 1px rgba(27, 27, 27, 0.822) !important;
     font-size: 1.9vw;
     font-family: 'Dancing Script', cursive;
     line-height: 1.2 !important;
@@ -408,4 +408,41 @@ h4 {
     font-family: 'Kalam', cursive !important;
     padding: 5px 10px 10px;
     margin: 0;
+}
+
+.copyright {
+    color: var(--ochre);
+    font-size: 1.5em;
+    font-family: 'satisfy', cursive;
+    border: 0;
+    text-shadow: 0px 1px 1px rgba(27, 27, 27, 0.822) !important;
+}
+.odetocode-footer {
+    color: var(--ochre);
+    font-size: 1.5em;
+    font-family: 'satisfy', cursive;
+    text-decoration-line: underline;
+    border: 0;
+    text-shadow: 0px 1px 1px rgba(27, 27, 27, 0.822) !important;
+}
+
+.odetocode-footer a {
+    text-decoration: none;
+    color: var(--ink-pen);
+    
+}
+
+.journalCountText {
+    color: var(--teal) !important;
+    text-shadow: 0px 1px 1px rgba(27, 27, 27, 0.822) !important;
+}
+
+.about-us-text {
+    color: var(--ink-pen);
+    /* color: var(--ink-white); */
+    text-shadow: 0px 1px 1px rgba(145, 145, 145, 0.486);
+    font-size: 1.1em;
+    /* text-align: left !important; */
+    font-family: 'Kalam', cursive;
+    line-height: 1 !important;
 }
