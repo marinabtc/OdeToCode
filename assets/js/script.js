@@ -311,6 +311,10 @@ function save() {
     // resets the input in the reflection modal
     $("#reflection-input").val("");
 
+    // update journal count
+    getJournalNumber();
+
+
 }
 
 // Displays the reflections on the journal page in a card format
@@ -346,12 +350,23 @@ function renderReflections() {
 }
 
 // Shahid adding code that displays the number of reflections in the card at bottom
+// function getJournalNumber() {
+//   if (localStorage.reflections) {
+//     $(".journalCount").after(`<b>${JSON.parse(localStorage.reflections).length}</b>`);
+//   }
+//   else {
+//     $(".journalCount").after(`0`);
+//   }
+// }
+
+// MT proposition for number function
 function getJournalNumber() {
   if (localStorage.reflections) {
-    $(".journalCount").after(`<b>${JSON.parse(localStorage.reflections).length}</b>`);
+    $(".journalCount").text(JSON.parse(localStorage.reflections).length);
   }
   else {
-    $(".journalCount").after(`0`);
+    $(".journalCount").text(`0`);
   }
 }
+
 getJournalNumber();
