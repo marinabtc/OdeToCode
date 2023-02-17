@@ -97,11 +97,6 @@ function getPoem() {
     });
   }
 
-  // Behaviour if no input in the main search bar
-  else if (mainInput === "") {
-    return;
-  }
-
   // Advance search
   else {
     // search by author + title
@@ -274,12 +269,20 @@ function getRandomPoets() {
 renderReflections();
 
 // When reflection button clicked the input is save to local storage
-$("#reflection-button").on("click", save);
+$(".reflection-button").on("click", save);
 
 var now = moment();
 var reflectArr = [];
 
-function save() {
+function save(event) {
+  console.log(event.target.id==="saved")
+
+  if (event.target.id === "saved") {
+
+    $('#liveToast').toast({animation: true, delay: 2000, autohide: true});
+    $('#liveToast').toast("show");
+
+  }
 
   // id to updated when reflection modal has been added
   var reflections = $("#reflection-input").val();
@@ -308,8 +311,8 @@ function save() {
     localStorage.setItem("reflections", JSON.stringify(reflectArr));
   }
 
-    // resets the input in the reflection modal
-    $("#reflection-input").val("");
+  // resets the input in the reflection modal
+  $("#reflection-input").val("");
 
     // update journal count
     getJournalNumber();
