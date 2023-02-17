@@ -97,11 +97,6 @@ function getPoem() {
     });
   }
 
-  // Behaviour if no input in the main search bar
-  else if (mainInput === "") {
-    return;
-  }
-
   // Advance search
   else {
     // search by author + title
@@ -315,8 +310,6 @@ function save(event) {
     reflectArr.push(reflectData);
     localStorage.setItem("reflections", JSON.stringify(reflectArr));
   }
-
-  // $('.toast').toast(data-)
 
   // resets the input in the reflection modal
   $("#reflection-input").val("");
