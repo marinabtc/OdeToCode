@@ -90,22 +90,18 @@ function getPoem() {
         var poemAuthor = response[0].author;
         console.log("Author: " + poemAuthor);
 
-        // gets the poem's lines
-        var poemLines = response[0].lines;
-
-        console.log("Lines: ");
-
-        // loops through the lines array
-        // for (var i = 0; i < poemLines.length; i++) {
-        //   console.log(poemLines[i]);
-        // }
-
         renderPoem(response);
       } else {
         $("#no-results").modal("show");
       }
     });
   }
+
+  // Behaviour if no input in the main search bar
+  else if (mainInput === "") {
+    return;
+  }
+
   // Advance search
   else {
     // search by author + title
@@ -284,6 +280,7 @@ var now = moment();
 var reflectArr = [];
 
 function save() {
+
   // id to updated when reflection modal has been added
   var reflections = $("#reflection-input").val();
   console.log(reflections);
@@ -310,6 +307,14 @@ function save() {
     reflectArr.push(reflectData);
     localStorage.setItem("reflections", JSON.stringify(reflectArr));
   }
+
+    // resets the input in the reflection modal
+    $("#reflection-input").val("");
+
+    // update journal count
+    getJournalNumber();
+
+
 }
 
 // Displays the reflections on the journal page in a card format
@@ -345,12 +350,23 @@ function renderReflections() {
 }
 
 // Shahid adding code that displays the number of reflections in the card at bottom
+// function getJournalNumber() {
+//   if (localStorage.reflections) {
+//     $(".journalCount").after(`<b>${JSON.parse(localStorage.reflections).length}</b>`);
+//   }
+//   else {
+//     $(".journalCount").after(`0`);
+//   }
+// }
+
+// MT proposition for number function
 function getJournalNumber() {
   if (localStorage.reflections) {
-    $(".journalCount").after(`<b>${JSON.parse(localStorage.reflections).length}</b>`);
+    $(".journalCount").text(JSON.parse(localStorage.reflections).length);
   }
   else {
-    $(".journalCount").after(`0`);
+    $(".journalCount").text(`0`);
   }
 }
+
 getJournalNumber();
