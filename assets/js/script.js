@@ -279,7 +279,15 @@ $(".reflection-button").on("click", save);
 var now = moment();
 var reflectArr = [];
 
-function save() {
+function save(event) {
+  console.log(event.target.id==="saved")
+
+  if (event.target.id === "saved") {
+
+    $('#liveToast').toast({animation: true, delay: 2000, autohide: true});
+    $('#liveToast').toast("show");
+
+  }
 
   // id to updated when reflection modal has been added
   var reflections = $("#reflection-input").val();
@@ -308,8 +316,10 @@ function save() {
     localStorage.setItem("reflections", JSON.stringify(reflectArr));
   }
 
-    // resets the input in the reflection modal
-    $("#reflection-input").val("");
+  // $('.toast').toast(data-)
+
+  // resets the input in the reflection modal
+  $("#reflection-input").val("");
 
 }
 
