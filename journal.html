@@ -11,13 +11,18 @@
 
     <!--Bootstrap core CSS-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+  <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
 
 <!-- Moment.js   -->
 <script
@@ -38,7 +43,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js">
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link" href="./index.html">About Us <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" id="aboutUsButton" data-bs-toggle="modal" data-bs-target="#aboutUsModal">About Us <span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link active" href="./journal.html">My Poetry Journal</a>
       </div>
     </div>
@@ -81,8 +86,8 @@ src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js">
           <div class="card">
           <div class="card-body">
           <h5 class="card-title">Your Poetry Stats</h5>
-          <p class="card-text">You have reviewed <span class="journalCount"></span> poems so far.</p>
-          <div class="card-footer">
+          <p class="card-text">You have reviewed <span class="journalCount"></span> poem(s) so far!</p>
+          <div>
           <a href="./index.html" class="align-self-end btn btn-lg  rounded-pill card-button">View Another Random Poem</a>
         </div>
         </div>   
@@ -94,7 +99,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js">
           <div class="card-body">
           <h5 class="card-title">Have any Comments or Issues?</h5>
               <p class="card-text">Please click the button below to get in touch by email.</p>
-              <div class="card-footer">
+              <div>
               <a href="mailto:email@email.com?Subject=Ode-To-Code%20Comment%20or%20Issue&Body=Dear%20Ode-To-Code%2C" class="btn btn-lg rounded-pill card-button">Contact Us</a>
             </div>
           </div>   
@@ -103,6 +108,47 @@ src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js">
         </div>
   
       </section>
+
+      <!-- SK adding modal to pop up when about us link is clicked -->
+  <!-- MT Adding modal to alert when no search option selected -->
+  <!-- Modal -->
+  <div class="modal fade" id="aboutUsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">A Limerick about us:</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <pre class="about-us-text modal-body">
+          There once were some coders so keen,
+          Who made a poem app - a dream!
+          You can read and reflect,
+          On poems that you select,
+          To make your poetry skills - gleam!
+
+          You may search basic or advanced,
+          for results exceedingly enhanced.
+          Then, once retrieved and read,
+          you'll note thoughts in your head,
+          Saving them in a journal at last!
+        </pre>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- copyright footer-->
+
+    <div class="footer-container">
+      <footer>
+        <span class="copyright">&copy; </span><span class="odetocode-footer">Coded by <a href="https://github.com/marinabtc/OdeToCode">OdetoCode</span></a>
+      </footer>
+    </div>
+  
 
 
   <!-- jQuery JS -->

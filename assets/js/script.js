@@ -347,10 +347,20 @@ function renderReflections() {
 // Shahid adding code that displays the number of reflections in the card at bottom
 function getJournalNumber() {
   if (localStorage.reflections) {
-    $(".journalCount").after(`<b>${JSON.parse(localStorage.reflections).length}</b>`);
+    $(".journalCount").after(`<b class="journalCountText">${JSON.parse(localStorage.reflections).length}</b>`);
   }
   else {
     $(".journalCount").after(`0`);
   }
 }
 getJournalNumber();
+
+
+
+// shahid adding js to open modalpopup when about us is clicked
+$("#aboutUsButton").on("click", aboutUsModalPopUp);
+
+function aboutUsModalPopUp () {
+$("#aboutUsModal").modal("show");
+return
+}
